@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2 — propuesta |
-| **Estado** | **Pendiente de revisión y aprobación.** No autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. |
+| **Versión** | 0.2.1 — propuesta |
+| **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
+| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. La v0.2 se conserva en el historial de Git (commit a5d6863). |
 | **Documentos relacionados** | [05 — Mapa de navegación v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad de la auditoría](07-TRAZABILIDAD-AUDITORIA-v0.2.md) · [03 — Auditoría cruzada](03-AUDITORIA-CRUZADA.md) |
 | **Nombre** | "Definite Fitnes" es **provisional**: su validación como marca está pendiente (DEC-10, DEC-53). |
 
@@ -35,6 +35,8 @@ Cada regla y cada decisión lleva una etiqueta. **Ninguna regla sin la etiqueta 
 | **E9** | Comunidad |
 | **E10** | Suscripciones e integraciones |
 | **POST** | Pospuesto fuera del MVP; etapa exacta por definir (DEC-59) |
+| **MEN** | Habilitación futura de menores (13–17) y de la experiencia del tutor. **Fuera de la beta y del MVP** (DEC-44); etapa por definir |
+| **β** | Solo durante la beta cerrada (DEC-68) |
 
 ### 0.3 Identificadores
 
@@ -56,6 +58,17 @@ Cada regla y cada decisión lleva una etiqueta. **Ninguna regla sin la etiqueta 
 10. Se añade una **arquitectura funcional** con un servicio central de políticas (edad, país, consentimientos, permisos del tutor, plan y etapa).
 11. Se corrigen las contradicciones, huecos e identificadores señalados por la auditoría.
 
+### 0.5 Cambios en la v0.2.1
+
+Incorpora **solo** las dos decisiones aprobadas por el propietario; ninguna otra decisión cambia.
+
+1. **DEC-68:** la primera beta es cerrada, gratuita, solo para mayores de 18, por invitación y sin cobros ni suscripciones. La gratuidad de la beta no es permanente (RN-141).
+2. **DEC-44 (aprobada):** el MVP y la beta no admiten menores de 18. El objetivo futuro de admitir desde los 13 años se conserva.
+3. Las funciones solo necesarias para menores y tutores pasan al marcador **MEN** (habilitación futura), documentadas y sin eliminar.
+4. Nuevas reglas RN-141 (no gratuidad permanente), RN-142 (edad mínima 18 en la beta) y RN-143 (acceso por invitación); RN-01 y RN-140 ajustadas.
+5. DEC-67 se redefine como política de transición de la beta gratuita a planes comerciales (pendiente) y se añade DEC-69 (mecanismo de invitaciones, pendiente).
+6. Se reordena §12 según lo que bloquea la beta y lo que bloquea la habilitación futura de menores.
+
 ---
 
 ## 1. Descripción del producto
@@ -65,6 +78,7 @@ Cada regla y cada decisión lleva una etiqueta. **Ninguna regla sin la etiqueta 
 - **Lemas:** "Fitness, a tu manera." · "Tu vida. Tus objetivos. Tu progreso." [APR]
 - **Plataformas:** iOS y Android, prioridad móvil. Optimización específica para tablets: **POST** (DEC-03). [APR]
 - **Primer mercado:** México, en español. Arquitectura preparada para otros países e idiomas (DEC-06). [APR]
+- **Primer lanzamiento:** beta cerrada, gratuita, por invitación, solo para mayores de 18 años y sin cobros ni suscripciones (DEC-68, DEC-44). La gratuidad de la beta no es permanente (RN-141). [APR]
 - **Modelo de negocio:** freemium con suscripción; los pagos se implementan en E10 (DEC-01, DEC-22). [APR]
 
 ### 1.1 Qué no es [APR]
@@ -111,11 +125,11 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 | Tramo | Estado |
 |---|---|
 | **18+** | Experiencia completa. [APR] |
-| **16–17** | Experiencia diferenciada. **El contenido concreto está pendiente** (DEC-33). [APR] tramo · [PEND] contenido |
-| **13–15** | Experiencia diferenciada. **El contenido concreto está pendiente** (DEC-32). [APR] tramo · [PEND] contenido |
+| **16–17** | Experiencia diferenciada. **El contenido concreto está pendiente** (DEC-33). **No admitido en la beta ni en el MVP** (DEC-44). [APR] tramo · [PEND] contenido |
+| **13–15** | Experiencia diferenciada. **El contenido concreto está pendiente** (DEC-32). **No admitido en la beta ni en el MVP** (DEC-44). [APR] tramo · [PEND] contenido |
 | **< 13** | No admitidos. La edad mínima de 13 años es la intención de producto **pendiente de validación legal** (DEC-18). [APR][VAL] |
 
-**Habilitación de menores en el MVP:** pendiente (DEC-44). El MVP se diseña con la verificación de edad y el soporte técnico para menores, pero el acceso efectivo de menores de 18 depende de que se resuelvan DEC-30, DEC-31 y DEC-34. Si no se resuelven a tiempo, qué hacer es una decisión tuya que no está tomada.
+**Alcance de la beta y del MVP:** solo personas de **18 años o más** (DEC-44). [APR] Es una decisión de alcance del lanzamiento inicial: **no elimina** el objetivo de admitir usuarios desde los 13 años con experiencias diferenciadas (DEC-12, DEC-18). Todo lo necesario para menores y tutores se conserva documentado como **habilitación futura de menores (MEN)**, que requiere resolver antes DEC-18, DEC-30 a DEC-39, DEC-41, DEC-45 y DEC-64.
 
 ### 3.2 Perfiles de uso (ejemplos) [PROP]
 
@@ -131,7 +145,7 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 | Rol | Descripción | Estado |
 |---|---|---|
 | **Usuario** | Titular de una cuenta y dueño único de sus datos. | [APR] |
-| **Tutor** | Adulto que autoriza la cuenta de un menor. Sus funciones exactas están pendientes (DEC-30, DEC-31, DEC-39). | [APR] rol · [PEND] alcance |
+| **Tutor** | Adulto que autoriza la cuenta de un menor. Sus funciones exactas están pendientes (DEC-30, DEC-31, DEC-39). **No existe en la beta ni en el MVP** (DEC-44); habilitación futura (MEN). | [APR] rol · [PEND] alcance |
 | **Administrador familiar** | Adulto que paga el plan Familiar. Gestiona integrantes y suscripción; **no tiene acceso automático a datos personales** de los integrantes. | [APR] DEC-15 |
 | **Integrante familiar** | Usuario dentro de un plan Familiar con cuenta, perfil, progreso y datos propios. | [APR] |
 | **Soporte y moderación** | Personal de Definite Fitnes con acceso mínimo y registrado. Herramientas por definir (DEC-40). | [PROP] |
@@ -184,9 +198,10 @@ Es la pieza central para cumplir con edades, países y consentimientos sin recon
 | País | México | DEC-06, DEC-43 |
 | Tramo de edad | 13–15, 16–17, 18+ | Fecha de nacimiento |
 | Consentimientos otorgados | Datos de salud: sí/no | Servicio de consentimientos |
-| Permisos del tutor | Comunidad habilitada: sí/no | Pendiente (DEC-39) |
+| Permisos del tutor | Comunidad habilitada: sí/no | Pendiente (DEC-39); no aplica en la beta |
 | Plan | En el MVP, todos iguales | DEC-01 |
 | Disponibilidad por etapa | La función existe o no todavía | Plan de etapas |
+| Fase de lanzamiento | Beta cerrada: solo 18+, acceso por invitación, sin planes | DEC-68, DEC-44 |
 
 **Reglas del servicio de políticas**
 
@@ -228,14 +243,16 @@ El **perfil central** alimenta a todos los módulos; cada módulo produce datos 
 | E3 | Design System y prototipos | Pendiente |
 | E4 | Tecnologías y arquitectura técnica | Pendiente |
 | E5 | Modelo de datos y backend | Pendiente |
-| **E6.1** | Acceso, registro, verificación de edad, consentimientos, onboarding, inicio, perfil, privacidad, exportación y eliminación | Pendiente |
+| **E6.1** | Acceso por invitación (β), registro, verificación de edad (18+), consentimientos, onboarding, inicio, perfil, privacidad, exportación y eliminación | Pendiente |
 | **E6.2** | Entrenamiento, actividad (calendario e historial) y progreso con predicciones | Pendiente |
 | **E6.3** | Nutrición con base de alimentos acotada | Pendiente |
+| **Beta cerrada** | Primera salida del MVP (E6.1–E6.3) a personas adultas invitadas; gratuita y sin cobros (DEC-68) | Pendiente |
 | E7 | Gamificación y avatar | Pendiente |
 | E8 | Asistente de IA | Pendiente |
 | E9 | Comunidad | Pendiente |
 | E10 | Suscripciones, pagos e integraciones | Pendiente |
 | E11 | Pruebas y lanzamiento | Pendiente |
+| MEN | Habilitación futura de menores y experiencia del tutor (incluidas sus páginas web) | Etapa por definir; requiere validación legal |
 
 **RN-127** Cada entrega del MVP se prueba y se revisa contigo antes de empezar la siguiente. [APR] DEC-02
 
@@ -245,7 +262,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 | Módulo | MVP | Posterior |
 |---|---|---|
-| 1. Registro y onboarding | **E6.1** completo: correo, Apple y Google, verificación de edad, consentimientos separados, onboarding condicional | Verificación en dos pasos (POST) |
+| 1. Registro y onboarding | **E6.1**: invitación a la beta, correo, Apple y Google, verificación de edad (18+), consentimientos separados, onboarding condicional | Consentimiento parental y experiencias por edad (MEN); verificación en dos pasos (POST) |
 | 2. Inicio | **E6.1** estructura; tarjetas de cada módulo al llegar su entrega | Organización personalizada del inicio (E10); recomendaciones con IA (E8) |
 | 3. Nutrición | **E6.3**: resumen, registro, base acotada, detalle con fuente, alternativas, alimento propio, hábitos, historial, **recetas básicas** | **Biblioteca amplia de recetas (POST)**; código de barras y foto de platillos (POST) |
 | 4. Entrenamiento | **E6.2**: disciplinas con métricas propias (cuáles: DEC-47) + registro genérico para cualquier actividad; biblioteca, rutinas, sesión, historial, **programas básicos** | **Programas extensos (POST)**; más disciplinas con métricas propias (POST); GPS en vivo (POST); programas avanzados (E10) |
@@ -259,6 +276,8 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 | Suscripciones | **Sin restricciones comerciales** (DEC-01) | Planes y pagos (E10) |
 | Tablets | La app se usa en tablets **sin optimización específica** (viabilidad técnica: DEC-66) | **Diseños de dos paneles y barra lateral (POST)** |
 | Modo sin conexión | **Solo la sesión de entrenamiento en curso** (DEC-04) | Sincronización sin conexión completa (POST) |
+| Menores y tutores | **No incluidos** (DEC-44): beta y MVP solo 18+ | Consentimiento parental, experiencias 13–15 y 16–17, páginas web del tutor (MEN) |
+| Acceso | **Solo por invitación** durante la beta (DEC-68); mecanismo: DEC-69 | Condiciones de acceso posteriores a la beta: por definir |
 
 ---
 
@@ -266,19 +285,21 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 ### 6.1 Módulo 1 — Registro, acceso y onboarding [E6.1]
 
-**Funciones:** bienvenida; verificación de edad antes de cualquier otro dato; registro con correo o con Apple/Google; verificación de correo; inicio de sesión; recuperación de cuenta; consentimientos separados; solicitud de consentimiento parental (condicionada a DEC-44); onboarding condicional.
+**Funciones:** bienvenida; **invitación a la beta** (β); verificación de edad antes de cualquier dato personal; registro con correo o con Apple/Google; verificación de correo; inicio de sesión; recuperación de cuenta; consentimientos separados; onboarding condicional. La solicitud de consentimiento parental queda para la habilitación futura de menores (MEN).
 
 **Verificación de edad y acceso**
 
-- **RN-01** La fecha de nacimiento se pide primero, en una pantalla neutra que no sugiere qué edad "sirve". [PROP] · *La suficiencia de este método se valida en DEC-31.* [VAL]
+- **RN-01** (modificada en v0.2.1) La fecha de nacimiento se pide antes de cualquier otro dato personal (en la beta, justo después de validar la invitación, que no es un dato personal), en una pantalla neutra que no sugiere qué edad "sirve". [PROP] · *La suficiencia de este método se valida en DEC-31.* [VAL]
 - **RN-02** (modificada) Si la edad es menor que la mínima del país, no se crea cuenta ni se guardan datos personales. Si el dispositivo debe recordar ese bloqueo y cómo, se decide con validación legal (E-12). [PROP][VAL]
 - **RN-03** La fecha de nacimiento no la puede editar el usuario; la corrección se solicita a soporte. [PROP]
-- **RN-128** **Ningún método de autenticación permite crear una cuenta sin pasar por la verificación de edad.** Si alguien entra con Apple o Google y no tiene cuenta, se le lleva a la verificación de edad antes de crear nada. [APR] DEC-09
+- **RN-128** **Ningún método de autenticación permite crear una cuenta sin pasar por la verificación de edad.** Si alguien entra con Apple o Google y no tiene cuenta, se le lleva a la verificación de edad antes de crear nada; durante la beta, antes debe validar una invitación (A17). [APR] DEC-09, DEC-68
+- **RN-142** Durante la beta y el MVP, la edad mínima configurada es **18 años** (DEC-44). Con menos de 18 no se crea cuenta ni se guardan datos personales, y A11 explica que la beta es solo para personas adultas, sin sugerir cambiar la fecha. [APR] edad · [PROP] texto y comportamiento
+- **RN-143** Durante la beta solo se crea una cuenta con una invitación válida (A17), comprobada antes de pedir la fecha de nacimiento. Quién invita, cuántas invitaciones hay, si son de un solo uso y si caducan: DEC-69. [APR] acceso por invitación · [PEND] mecanismo
 - **RN-05** Contraseña de al menos 10 caracteres, rechazada si aparece en listas de contraseñas filtradas, sin reglas arbitrarias de símbolos. [PROP]
 - **RN-06** Los mensajes de inicio de sesión y recuperación no revelan si un correo está registrado. [PROP]
 - **RN-07** Límite de intentos de inicio de sesión y recuperación; al superarlo, se muestra un estado de espera con el tiempo restante. [PROP]
 
-**Menores (todo condicionado a DEC-30, DEC-31 y DEC-44)**
+**Menores — habilitación futura (MEN), fuera de la beta y del MVP (DEC-44)**
 
 - **RN-04** (modificada) Un menor no accede a la app hasta que su tutor otorgue el consentimiento. La cuenta queda en estado "pendiente" y no recoge más datos. Plazo de caducidad propuesto: 14 días. [PROP][VAL]
 - **RN-111** **Suspendida → DEC-30.** (v0.1 proponía consentimiento para todos los menores de 18.)
@@ -307,6 +328,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 | Dato | Obligatorio | Finalidad | Consentimiento de salud | Tramos |
 |---|---|---|---|---|
+| Código de invitación | Sí durante la beta | Acceso a la beta | No | Beta (β) |
 | Fecha de nacimiento | Sí | Edad y políticas | No | Todos |
 | Correo / cuenta Apple o Google | Sí | Cuenta | No | Todos |
 | Nombre o apodo | Sí | Saludo y perfil | No | Todos |
@@ -318,7 +340,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 | Alergias | No | Advertencias | **Sí*** | Según DEC-34 |
 | Consideraciones de seguridad | No | Adaptar y advertir | **Sí** | Según DEC-34 |
 | Estatura y peso | No | Estimaciones de energía y objetivos | **Sí** | Adultos; menores: DEC-35 |
-| Correo del tutor | Sí para menores | Consentimiento | No | Menores (DEC-44) |
+| Correo del tutor | Solo en la habilitación futura de menores | Consentimiento | No | MEN (fuera de la beta) |
 
 \* La clasificación definitiva de qué datos son "de salud" requiere validación legal (DEC-42). La tabla muestra la propuesta inicial.
 
@@ -537,7 +559,7 @@ Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece i
 
 ## 7. Modelo de suscripción previsto (E10)
 
-> **En el MVP no hay pagos ni restricciones comerciales** (DEC-01). Todo esta sección se implementa en E10.
+> **En el MVP no hay pagos ni restricciones comerciales** (DEC-01). La beta cerrada es gratuita y sin cobros ni suscripciones (DEC-68). Todo esta sección se implementa en E10; **no se implementan cobros ni suscripciones antes**.
 
 ### 7.1 Planes [APR] DEC-19
 
@@ -569,12 +591,13 @@ Las cifras concretas son la decisión DEC-62.
 
 - **RN-91** Nunca se bloquean seguridad, privacidad, información esencial, ayuda, recursos de crisis, exportación ni eliminación. [APR]
 - **RN-92** Los datos nunca se retienen como rehén: al bajar de plan nada se borra; lo que excede queda en solo lectura y exportable, y el usuario elige qué mantener activo (U19). [PROP]
-- **RN-140** **Transición del MVP a los planes:** cómo se trata a quienes usaron el MVP sin límites cuando lleguen los planes (por ejemplo, conservar lo creado, periodo de cortesía) es una decisión pendiente (DEC-67). Mínimo garantizado por RN-92: no se borra nada. [PEND]
+- **RN-140** (modificada en v0.2.1) **Transición de la beta gratuita a planes comerciales:** qué ocurre con las cuentas, los datos y lo creado por quienes participaron en la beta cuando se activen los planes (por ejemplo, aviso previo, periodo de cortesía, conservar lo creado) es una política pendiente (DEC-67). RN-92 (no borrar nada) sigue siendo una propuesta. [PEND]
+- **RN-141** **La beta gratuita no garantiza gratuidad permanente.** Se informa de forma clara en la invitación (A17), en los términos de la beta (A12) y antes de crear la cuenta, sin presentar la gratuidad actual como permanente. [APR] DEC-68
 - **RN-93** El derecho a Premium se valida en el servidor. [APR]
 - **RN-94** Precios, renovación y cancelación claros; cancelar tan fácil como contratar. [PROP]
 - **RN-95** No se implementan pagos hasta definir proveedores, comisiones, reglas y condiciones de las tiendas. [APR] DEC-22 · Uso de los sistemas de compra de Apple y Google para bienes digitales [PROP][VAL]
 - **RN-96** Sin presión artificial en la pantalla de planes. [PROP]
-- **RN-97** Compras de menores: DEC-38 y DEC-44. [PEND] (v0.1 proponía no mostrarles ofertas)
+- **RN-97** Compras de menores: no aplica en la beta ni en el MVP (DEC-44); para la habilitación futura: DEC-38. [PEND] (v0.1 proponía no mostrarles ofertas)
 
 ### 7.4 Plan Familiar
 
@@ -611,6 +634,7 @@ Las cifras concretas son la decisión DEC-62.
 ### 8.2 Privacidad
 
 - Privacidad por defecto y minimización [APR] DEC-11.
+- **Beta:** se mantienen todas las obligaciones legales y de privacidad aplicables a personas adultas (aviso de privacidad, consentimientos, derechos ARCO, exportación y eliminación, seguridad). Que la beta sea gratuita y cerrada no las reduce. [APR] DEC-68
 - Aviso de privacidad por capas; aviso específico para tutores [PROP][VAL].
 - **Consentimientos separados y granulares** (RN-129 a RN-133, RN-139).
 - Sin publicidad de terceros en la primera versión y sin venta de datos personales [PROP] (RN-118).
@@ -642,6 +666,8 @@ Las cifras concretas son la decisión DEC-62.
 ---
 
 ## 9. Consideraciones por edad
+
+> **Alcance (v0.2.1):** la beta y el MVP no admiten menores (DEC-44). Esta sección documenta la **habilitación futura de menores (MEN)**: los principios siguen vigentes como objetivo de producto y las decisiones pendientes deben resolverse antes de admitir a menores.
 
 ### 9.1 Principios aprobados [APR]
 
@@ -734,7 +760,7 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 
 | Función | 18+ | 16–17 | 13–15 |
 |---|---|---|---|
-| Registro y onboarding | Sí | DEC-44, DEC-30, DEC-31 | DEC-44, DEC-30, DEC-31 |
+| Registro y onboarding | Sí | No en la beta ni en el MVP (DEC-44); futuro: DEC-30, DEC-31 | No en la beta ni en el MVP (DEC-44); futuro: DEC-30, DEC-31 |
 | Entrenamiento | Sí | DEC-33 | DEC-32 |
 | Progreso: objetivos no corporales y predicciones de constancia y rendimiento | Sí | DEC-33 | DEC-32 |
 | Progreso: medidas y predicciones corporales | Sí (con consentimiento) | **No** (predicción, DEC-14) · registro: DEC-35 | **No** (predicción, DEC-14) · registro: DEC-35 |
@@ -747,6 +773,8 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 | Funciones del tutor | — | DEC-39 | DEC-39 |
 
 ### 9.5 Experiencia del tutor por fases [APR] necesidad · [PROP] fases (DEC-07, DEC-45)
+
+**Fuera de la beta y del MVP (DEC-44).** La necesidad se conserva (DEC-07) para la habilitación futura de menores; las fases siguientes se aplicarán entonces.
 
 | Función del tutor | ¿Requiere interfaz web? | Fase propuesta |
 |---|---|---|
@@ -787,29 +815,40 @@ Onboarding completado, activación en 48 h, retención a 4 semanas, semanas con 
 
 El detalle completo, con estado, justificación y consecuencias, está en el [registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md).
 
-### 12.1 Bloquean el inicio de E6.1
+### 12.1 Bloquean el inicio de E6.1 (beta solo para adultos)
 
 | Decisión | Tema |
 |---|---|
 | DEC-42 | Qué datos son "de salud" y granularidad de los consentimientos [VAL] |
-| DEC-44 | Si el MVP habilita menores y qué hacer si la validación legal no está lista |
-| DEC-30, DEC-31 | Consentimiento parental y verificación del tutor [VAL] (necesarios solo si DEC-44 habilita menores) |
 | DEC-43 | Cómo se determina el país del usuario |
-| DEC-64 | Aprobar el criterio "desactivado mientras esté pendiente" |
-| DEC-45 | Aprobar las fases de la experiencia del tutor |
-| DEC-60 | Aprobar o ajustar los valores propuestos (plazos, umbrales) usados en E6.1 |
+| DEC-60 | Valores propuestos (plazos, umbrales) que usa E6.1; el plazo de 14 días del tutor ya no aplica a la beta |
+| DEC-69 | Mecanismo de invitaciones a la beta |
+
+**Dejan de bloquear la beta (DEC-44):** DEC-30, DEC-31, DEC-45 y DEC-64 pasan a §12.5.
+
+**Notas que no cambian ninguna decisión:**
+- Pantallas de E6.1 también dependen de DEC-54 (O03), DEC-55 (O04), DEC-65 (A14) y DEC-56 (U01, con valor provisional). Incluirlas formalmente en esta lista es la corrección AF-17, pendiente de tu autorización.
+- Antes de invitar a personas reales hacen falta los Términos (incluidos los de la beta, con RN-141) y el Aviso de privacidad validados legalmente (AF-18, sin decisión registrada todavía).
 
 ### 12.2 Bloquean E6.2
 
-DEC-47 (disciplinas), DEC-55 (modalidad sin métricas), DEC-57 (licencias de ejercicios), DEC-63 (cantidad de programas), DEC-32 y DEC-33 si hay menores.
+DEC-47 (disciplinas), DEC-55 (modalidad sin métricas), DEC-57 (licencias de ejercicios), DEC-63 (cantidad de programas).
 
 ### 12.3 Bloquean E6.3
 
-DEC-05 ya aprobada; pendientes: DEC-57 (fuentes de alimentos y recetas), DEC-50 (límites nutricionales) [VAL], DEC-54 (bienestar y hábitos), DEC-61 (señales de riesgo) [VAL], DEC-36 si hay menores.
+DEC-05 ya aprobada; pendientes: DEC-57 (fuentes de alimentos y recetas), DEC-50 (límites nutricionales) [VAL], DEC-54 (bienestar y hábitos), DEC-61 (señales de riesgo) [VAL].
 
-### 12.4 Pueden esperar a su etapa
+### 12.4 Antes de activar planes comerciales (E10)
 
-DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones pospuestas), DEC-66 (tablets, en E4), DEC-37, DEC-38, DEC-40, DEC-41, DEC-48, DEC-49, DEC-51, DEC-52, DEC-58, DEC-62, DEC-67, DEC-53 (marca, antes del lanzamiento).
+DEC-67 (política de transición de la beta gratuita), DEC-48, DEC-49, DEC-51, DEC-52, DEC-58, DEC-62.
+
+### 12.5 Habilitación futura de menores (MEN)
+
+DEC-18 (edad mínima de 13) [VAL], DEC-30, DEC-31, DEC-32, DEC-33, DEC-34, DEC-35, DEC-36, DEC-37, DEC-38, DEC-39, DEC-41, DEC-45, DEC-64.
+
+### 12.6 Pueden esperar a su etapa
+
+DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones pospuestas), DEC-66 (tablets, en E4), DEC-40 (comunidad, antes de E9), DEC-53 (marca, antes de publicar en tiendas), DEC-65 (analítica; ver nota de §12.1).
 
 ---
 
@@ -822,6 +861,8 @@ DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones po
 - **ARCO:** derechos de Acceso, Rectificación, Cancelación y Oposición sobre los datos personales.
 - **Rango de predicción:** intervalo de fechas entre las que es probable que ocurra algo.
 - **POST:** función conservada en la visión, pero programada después del MVP.
+- **Beta cerrada:** primera salida del MVP a un grupo de personas adultas invitadas, gratuita y sin cobros (DEC-68).
+- **MEN:** funciones para menores y tutores conservadas para una habilitación futura; fuera de la beta y del MVP (DEC-44).
 
 ---
 
@@ -829,7 +870,7 @@ DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones po
 
 | Reglas v0.1 | Estado en v0.2 |
 |---|---|
-| RN-01 a RN-10 | Conservadas; RN-02, RN-04, RN-10 modificadas |
+| RN-01 a RN-10 | Conservadas; RN-01 (v0.2.1), RN-02, RN-04, RN-10 modificadas |
 | RN-11, RN-12 | Modificadas (consentimiento y principios por edad) |
 | RN-13 a RN-17 | Conservadas; RN-15 y RN-17 modificadas |
 | RN-18 a RN-26 | Conservadas |
@@ -861,6 +902,7 @@ DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones po
 | RN-117 | Modificada (fases del tutor) |
 | RN-118 a RN-120 | Conservadas (§8.2) |
 | RN-121 | Conservada (§4.1) |
-| RN-122 a RN-140 | Nuevas |
+| RN-122 a RN-140 | Nuevas en v0.2 (RN-140 modificada en v0.2.1) |
+| RN-141 a RN-143 | Nuevas en v0.2.1 (beta) |
 
 La matriz de experiencias por edad de la v0.1 (§6.4) **no se elimina**: queda como fuente de las alternativas de DEC-32 a DEC-41.

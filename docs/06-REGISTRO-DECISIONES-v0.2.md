@@ -2,8 +2,9 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2 — propuesta |
-| **Estado** | Pendiente de revisión |
+| **Versión** | 0.2.1 — propuesta |
+| **Estado** | Pendiente de aprobación del propietario. **No es definitiva.** |
+| **Historial** | La v0.2 se conserva en Git (commit a5d6863). La v0.2.1 incorpora DEC-44 (aprobada) y DEC-68, y añade DEC-69. |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [05 — Mapa v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [07 — Trazabilidad](07-TRAZABILIDAD-AUDITORIA-v0.2.md) |
 
 ## Estados
@@ -20,7 +21,14 @@ Abreviaturas de documentos: **PRD** = 04-PRD-v0.2 · **MAPA** = 05-MAPA-v0.2.
 
 ## 1. Decisiones aprobadas
 
-### 1.1 Aprobadas para esta propuesta (mensaje del 16 de noviembre)
+### 1.0 Aprobadas para la v0.2.1 (decisiones expresas del propietario)
+
+| ID | Descripción | Estado | Justificación | Documentos afectados | Consecuencias sobre el producto |
+|---|---|---|---|---|---|
+| **DEC-44** | El MVP y su primera beta **no admiten menores de 18 años**. Es una decisión de alcance del lanzamiento inicial: **no elimina** el objetivo futuro de admitir usuarios desde los 13 años | Aprobada | Decisión expresa del propietario; sustituye la versión pendiente de la v0.2 | PRD §3.1, §3.3, §5, §6.1, §7.3, §9, §12 · MAPA A03, A11, marcador ◆ MEN, §3.4, F27 | Las pantallas y páginas web solo necesarias para menores y tutores salen del alcance de la beta y quedan documentadas como **MEN** (habilitación futura): 5 pantallas de la app y 4 páginas web. DEC-18, DEC-30 a DEC-39, DEC-41, DEC-45 y DEC-64 dejan de bloquear la beta y siguen pendientes para la habilitación futura |
+| **DEC-68** | Primera beta: **cerrada, gratuita, solo para mayores de 18 años, accesible mediante invitación y sin cobros ni suscripciones** durante esta fase. La beta gratuita **no garantiza gratuidad permanente** | Aprobada | Decisión expresa del propietario; resuelve AF-19 | PRD §1, §4.3, §5.1, §5.2, §7, §8.2, RN-141 a RN-143 · MAPA A02, A12, A17, F21, F26 | Nueva pantalla A17 (invitación); aviso de no gratuidad permanente en la invitación y en los términos de la beta; se mantienen todas las obligaciones legales y de privacidad para adultos; mecanismo de invitaciones pendiente (DEC-69); política de transición pendiente (DEC-67). Pagos y suscripciones siguen sin implementarse (DEC-01, DEC-22) |
+
+### 1.1 Aprobadas para la v0.2 (mensaje del 16 de noviembre)
 
 | ID | Descripción | Estado | Justificación | Documentos afectados | Consecuencias sobre el producto |
 |---|---|---|---|---|---|
@@ -58,6 +66,8 @@ Abreviaturas de documentos: **PRD** = 04-PRD-v0.2 · **MAPA** = 05-MAPA-v0.2.
 
 Ninguno se resuelve en esta propuesta. Las alternativas están en el PRD §9.3.
 
+**Desde la v0.2.1 (DEC-44), ninguno bloquea la beta ni el MVP:** bloquean la habilitación futura de menores (MEN). Su estado no cambia.
+
 | ID | Descripción | Estado | Justificación | Documentos afectados | Consecuencias sobre el producto |
 |---|---|---|---|---|---|
 | **DEC-30** | Requisitos legales del consentimiento parental | Requiere validación (legal) | Indicado por ti como pendiente | PRD §9.3, RN-04, RN-111 · MAPA A09, A10, T01 | Sin resolver, no pueden habilitarse menores (DEC-44) |
@@ -77,13 +87,14 @@ Ninguno se resuelve en esta propuesta. Las alternativas están en el PRD §9.3.
 
 ## 3. Otras decisiones pendientes
 
+**Nota v0.2.1:** con DEC-44 aprobada, DEC-45 y DEC-64 solo aplican a la habilitación futura de menores; su estado no cambia.
+
 Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al preparar esta propuesta. Las marcadas **(propuesta de Claude)** tienen una sugerencia en el PRD o el mapa que **no debe tomarse como aprobada**.
 
 | ID | Descripción | Estado | Justificación | Documentos afectados | Consecuencias sobre el producto |
 |---|---|---|---|---|---|
 | **DEC-42** | Qué datos se consideran "de salud" y granularidad de los consentimientos | Requiere validación (legal) | Necesario para aplicar DEC-08. **Bloquea E6.1** | PRD §8.3, RN-130 · MAPA A14, §8 | Si actividad y alimentación se consideran datos de salud, gran parte de la app dependería de ese consentimiento |
 | **DEC-43** | Cómo se determina el país del usuario (tienda, configuración del teléfono, pregunta explícita) | Pendiente | Necesario para DEC-06 y para la edad mínima. **Bloquea E6.1** | PRD §8.4 | Afecta a A03 y al servicio de políticas |
-| **DEC-44** | Si el MVP habilita el acceso de menores y qué hacer si la validación legal no está lista a tiempo | Pendiente | Las pantallas ◆ dependen de ello. La opción "beta solo para adultos" de la auditoría **no está aprobada** | PRD §3.1 · MAPA ◆ (8 pantallas), §3.4 | Cambia el tamaño efectivo del MVP (74 o 69 pantallas de la app) |
 | **DEC-45** | Fases de la experiencia del tutor: fase 1 con T01, T03, T04 y correos; fase 2 con el panel T02 (propuesta de Claude) | Pendiente | Desarrolla DEC-07 | PRD §9.5 · MAPA §3.2 | Fase 1 requiere igualmente una pequeña web segura |
 | **DEC-46** | Pestaña "Amigos" antes de E9 (ocultar o mostrar "Próximamente") — v0.1 D-01 | Pendiente | Sin cambios desde v0.1 | PRD RN-14 · MAPA §4.2 | Afecta a la barra inferior del MVP |
 | **DEC-47** | Disciplinas con métricas propias en el MVP (propuesta: gimnasio, running, casa) — v0.1 D-02 | Pendiente | Sin aprobación todavía. **Bloquea E6.2** | PRD §6.4 | Determina el trabajo de E6.2 |
@@ -106,7 +117,8 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 | **DEC-64** | Mientras una decisión sobre menores esté pendiente, la función queda desactivada para ese tramo (propuesta de Claude) | Pendiente | Deriva de DEC-11, pero es un criterio nuevo | PRD PR-8, RN-125, §9.2 | Permite construir sin decidir la experiencia de menores |
 | **DEC-65** | La analítica permanece desactivada hasta que el usuario la consienta (propuesta de Claude) | Pendiente | Hallazgo E-09; deriva de DEC-11 | PRD RN-133 · MAPA A14 | Menos datos de uso al principio |
 | **DEC-66** | Comportamiento de la app en tablets durante el MVP (escalado, compatibilidad en iPad) | Requiere validación (técnica, Etapa 4) | DEC-03 pospone la optimización | PRD §5.2, §10 · MAPA §10 | Puede afectar a la publicación en la tienda de iPad |
-| **DEC-67** | Cómo se trata a quienes usaron el MVP sin límites cuando se activen los planes | Pendiente | Consecuencia de DEC-01 | PRD RN-140 · MAPA F21 | Mínimo garantizado: no se borra nada (RN-92, propuesta) |
+| **DEC-67** | **Política de transición de la beta gratuita a planes comerciales:** qué ocurre con las cuentas, los datos y lo creado por quienes participaron en la beta cuando se activen los planes (aviso previo, periodo de cortesía, condiciones) | Pendiente | Consecuencia de DEC-01 y DEC-68; redefinida en la v0.2.1 por instrucción del propietario | PRD RN-140, RN-141 · MAPA F21 | Debe resolverse antes de activar planes comerciales (E10). Mínimo propuesto: no se borra nada (RN-92, propuesta). Puede requerir validación legal (protección al consumidor) |
+| **DEC-69** | Mecanismo de invitaciones a la beta: quién invita, cuántas invitaciones hay, si los códigos son de un solo uso, caducidad y qué ve quien no tiene invitación | Pendiente | Necesario para aplicar DEC-68. **Bloquea E6.1** | PRD RN-143 · MAPA A17, F26 | Define los estados de error de A17 y la comunicación a quien no tiene invitación |
 
 ---
 
@@ -141,6 +153,8 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 | DP-15 Fuentes de contenido | DEC-57 | Requiere validación |
 | DP-16 Tablets y tema claro | DEC-03 + DEC-66 | Aprobada + Requiere validación |
 | DP-17 Comparación de escenarios | DEC-58 | Pendiente |
+| AF-19 Lanzamiento del MVP (auditoría final) | DEC-68 | Aprobada |
+| v0.2 DEC-44 Habilitación de menores en el MVP | DEC-44 (redefinida: no se admiten menores en la beta ni en el MVP) | Aprobada |
 
 ---
 
@@ -148,9 +162,9 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 
 | Estado | Cantidad | IDs |
 |---|---|---|
-| Aprobada | 21 | DEC-01 a DEC-17, DEC-19 a DEC-22 |
+| Aprobada | 23 | DEC-01 a DEC-17, DEC-19 a DEC-22, DEC-44, DEC-68 |
 | Requiere validación | 17 | DEC-18, DEC-30, DEC-31, DEC-32, DEC-33, DEC-34, DEC-35, DEC-36, DEC-37, DEC-39, DEC-41, DEC-42, DEC-50, DEC-53, DEC-57, DEC-61, DEC-66 |
-| Pendiente | 22 | DEC-38, DEC-40, DEC-43 a DEC-49, DEC-51, DEC-52, DEC-54 a DEC-56, DEC-58 a DEC-60, DEC-62 a DEC-65, DEC-67 |
-| **Total** | **60** | |
+| Pendiente | 22 | DEC-38, DEC-40, DEC-43, DEC-45 a DEC-49, DEC-51, DEC-52, DEC-54 a DEC-56, DEC-58 a DEC-60, DEC-62 a DEC-65, DEC-67, DEC-69 |
+| **Total** | **62** | |
 
 Los IDs DEC-23 a DEC-29 no se usan: quedan reservados para futuras decisiones aprobadas.

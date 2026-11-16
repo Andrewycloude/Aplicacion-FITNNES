@@ -2,10 +2,23 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2 — propuesta |
-| **Estado** | **Pendiente de revisión y aprobación.** No autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. |
+| **Versión** | 0.2.1 — propuesta |
+| **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
+| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. La v0.2 se conserva en Git (commit a5d6863). |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad](07-TRAZABILIDAD-AUDITORIA-v0.2.md) |
+
+---
+
+## 0. Cambios en la v0.2.1
+
+Incorpora solo DEC-68 (beta cerrada, gratuita, por invitación, solo 18+, sin cobros) y DEC-44 (sin menores en la beta ni en el MVP):
+
+1. Nueva pantalla **A17 Invitación a la beta** (β), antes de la fecha de nacimiento.
+2. La verificación de edad de la beta exige **18 años o más**; con menos de 18 se muestra A11 (F27).
+3. Las pantallas A09, A10, A15, A16 y U16, y las páginas web T01–T04, pasan a **MEN** (habilitación futura de menores): fuera de la beta y del MVP, documentadas sin eliminarse.
+4. Flujos F01 y F02 ajustados; nuevos F26 (acceso por invitación) y F27 (menor de 18 en la beta); F03, F07, F16 y F17 marcados como MEN.
+5. F21: transición de la beta gratuita a planes comerciales pendiente (DEC-67), con aviso de no gratuidad permanente desde la invitación (RN-141).
+6. Conteos actualizados (§3.4).
 
 ---
 
@@ -39,7 +52,8 @@ Los nodos de decisión de los diagramas (rombos) no son pantallas y no llevan pr
 | **E6.1 / E6.2 / E6.3** | Entrega interna del MVP |
 | **E7–E10** | Etapa posterior |
 | **POST** | Posterior al MVP, etapa por definir (DEC-59) |
-| **◆** | Pantalla condicionada a que se habilite el acceso de menores (DEC-44) |
+| **◆ MEN** | Habilitación futura de menores y tutores. **Fuera de la beta y del MVP** (DEC-44); se conserva documentada |
+| **β** | Solo durante la beta cerrada (DEC-68) |
 | **🔒 Salud** | Requiere el consentimiento de datos de salud (categoría según DEC-42) |
 | **★** | Función prevista como Premium en E10 (en v0.1 se usaba "P", que se confundía con Progreso) |
 | **[PEND DEC-xx]** | El comportamiento depende de una decisión pendiente |
@@ -66,9 +80,10 @@ Definite Fitnes
 ├── Acceso y cuenta (A)
 │   ├── Bienvenida, verificación de edad, registro, inicio de sesión, recuperación
 │   ├── Consentimientos de datos (A14)
-│   ├── Menores: consentimiento parental y espera ◆
-│   └── Transiciones: cambio de tramo de edad ◆, mayoría de edad ◆, eliminación programada
-├── Tutor (T, web) ◆
+│   ├── Invitación a la beta (A17) β
+│   ├── Menores: consentimiento parental y espera ◆ MEN (fuera de la beta)
+│   └── Transiciones: eliminación programada; cambio de tramo y mayoría de edad ◆ MEN
+├── Tutor (T, web) ◆ MEN — fuera de la beta
 ├── Onboarding (O)
 ├── Inicio (H)
 ├── Nutrición (N) ............................ E6.3
@@ -87,7 +102,7 @@ Definite Fitnes
 └── Perfil y cuenta (U)
     ├── Perfil, ajustes, apariencia, notificaciones, seguridad ... E6.1
     ├── Privacidad, consentimientos, exportar, eliminar, ayuda .. E6.1
-    ├── Mi tutor ◆ ............................................. E6.1
+    ├── Mi tutor ◆ ............................................. MEN
     └── Suscripción, planes, grupo familiar, integraciones ..... E10
 ```
 
@@ -101,20 +116,21 @@ Definite Fitnes
 |---|---|---|---|---|
 | A01 | Splash y enrutamiento | E6.1 | | Abrir la app |
 | A02 | Bienvenida | E6.1 | | A01 (sin sesión), U03 Cerrar sesión |
-| A03 | Fecha de nacimiento | E6.1 | | A02 Crear cuenta; A06 (Apple/Google sin cuenta) |
+| A03 | Fecha de nacimiento | E6.1 | | A17 (invitación válida) |
 | A04 | Registro | E6.1 | | A03 (edad admitida) |
 | A05 | Verificar correo | E6.1 | | A04 (registro con correo); A01 (correo sin verificar) |
 | A06 | Iniciar sesión | E6.1 | | A02; A08; enlace directo sin sesión |
 | A07 | Recuperar cuenta | E6.1 | | A06 |
 | A08 | Nueva contraseña | E6.1 | | Enlace del correo de recuperación |
-| A09 | Consentimiento parental: solicitud | E6.1 | ◆ | A05 o A04 (menor) |
-| A10 | Esperando al tutor | E6.1 | ◆ | A09; A01 o A06 (consentimiento pendiente) |
-| A11 | No disponible por edad | E6.1 | | A03 (edad menor a la mínima) |
+| A09 | Consentimiento parental: solicitud | MEN | ◆ | A05 o A04 (menor), cuando se habiliten menores |
+| A10 | Esperando al tutor | MEN | ◆ | A09; A01 o A06 (consentimiento pendiente) |
+| A11 | No disponible por edad | E6.1 | | A03 (menos de 18 en la beta); A01 (bloqueo recordado, si se valida) |
 | A12 | Documentos legales | E6.1 | | A02, A04, A14, U03, U18 |
 | A13 | Cuenta programada para eliminarse | E6.1 | | A01 o A06 (cuenta en periodo de gracia) |
-| A14 | Tus datos y permisos (consentimientos iniciales) | E6.1 | | A05 / A04 Apple-Google (adulto); A01 tras aprobación del tutor (menor ◆) |
-| A15 | Cambio de tramo de edad | E6.1 | ◆ | A01 (al detectar el paso de 15 a 16) |
-| A16 | Mayoría de edad: tus propios consentimientos | E6.1 | ◆ | A01 (al cumplir 18 una cuenta de menor) |
+| A14 | Tus datos y permisos (consentimientos iniciales) | E6.1 | | A05; A04 (Apple/Google) |
+| A15 | Cambio de tramo de edad | MEN | ◆ | A01 (al detectar el paso de 15 a 16) |
+| A16 | Mayoría de edad: tus propios consentimientos | MEN | ◆ | A01 (al cumplir 18 una cuenta de menor) |
+| A17 | Invitación a la beta | E6.1 | β | A02 Crear cuenta; A06 (Apple/Google sin cuenta); enlace de invitación |
 | O01 | ¿Cómo te llamamos? | E6.1 | | A14; A01 (onboarding incompleto) |
 | O02 | Tus objetivos | E6.1 | | O01 |
 | O03 | ¿Qué quieres usar? | E6.1 | | O02 |
@@ -197,19 +213,19 @@ Definite Fitnes
 | U13 | Eliminar cuenta | E6.1 | | U05 |
 | U14 | Ayuda y seguridad | E6.1 | | U03; M02; I01 (crisis) |
 | U15 | Integraciones | E10 | [PEND DEC-37] menores | U03 |
-| U16 | Mi tutor | E6.1 | ◆ | U05 (cuenta de menor) |
+| U16 | Mi tutor | MEN | ◆ | U05 (cuenta de menor) |
 | U17 | Aceptar invitación familiar | E10 | [PEND DEC-38] menores | Enlace de invitación; U10 "Tengo un código" |
 | U18 | Consentimientos y permisos | E6.1 | | U05; M01 |
 | U19 | Ajuste tras cambio de plan | E10 | | A01 o notificación tras bajar de plan |
 
-### 3.2 Páginas web para tutores ◆
+### 3.2 Páginas web para tutores ◆ MEN — fuera de la beta y del MVP
 
 | ID | Página | Fase | Se accede desde |
 |---|---|---|---|
-| T01 | Solicitud de consentimiento | Fase 1 (E6.1, condicionada) | Correo enviado desde A09 |
-| T02 | Panel del tutor | **Fase 2 (POST)** | Enlace en los correos al tutor |
-| T03 | Solicitud de permiso puntual | Fase 1 (E6.1, condicionada) | Correo generado desde U16 (y desde S02 e I01 cuando existan) |
-| T04 | Gestionar o retirar consentimiento | Fase 1 (E6.1, condicionada) | Enlace al pie de todos los correos al tutor |
+| T01 | Solicitud de consentimiento | MEN · fase 1 | Correo enviado desde A09 |
+| T02 | Panel del tutor | MEN · fase 2 | Enlace en los correos al tutor |
+| T03 | Solicitud de permiso puntual | MEN · fase 1 | Correo generado desde U16 (y desde S02 e I01 cuando existan) |
+| T04 | Gestionar o retirar consentimiento | MEN · fase 1 | Enlace al pie de todos los correos al tutor |
 
 ### 3.3 Componentes superpuestos (no son pantallas)
 
@@ -222,9 +238,9 @@ Definite Fitnes
 
 ### 3.4 Conteo
 
-| Grupo | IDs | Total | E6.1 | E6.2 | E6.3 | E7 | E8 | E9 | E10 | POST |
+| Grupo | IDs | Total | E6.1 | E6.2 | E6.3 | E7 | E8 | E9 | E10 | MEN |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Acceso | A01–A16 | 16 | 16 | | | | | | | |
+| Acceso | A01–A17 | 17 | 13 | | | | | | | 4 |
 | Onboarding | O01–O12 | 12 | 12 | | | | | | | |
 | Inicio | H01–H03 | 3 | 2 | | | | | | 1 | |
 | Nutrición | N01–N10 | 10 | | | 10 | | | | | |
@@ -234,14 +250,17 @@ Definite Fitnes
 | Recompensas y avatar | G01–G04, V01 | 5 | | | | 5 | | | | |
 | Asistente | I01–I03 | 3 | | | | | 3 | | | |
 | Comunidad | S01–S11 | 11 | | | | | | 11 | | |
-| Perfil y cuenta | U01–U19 | 19 | 12 | | | | | | 7 | |
-| **App** | | **102** | **42** | **22** | **10** | **5** | **3** | **11** | **9** | **0** |
-| Web tutor | T01–T04 | 4 | 3 | | | | | | | 1 |
-| **Total** | | **106** | **45** | **22** | **10** | **5** | **3** | **11** | **9** | **1** |
+| Perfil y cuenta | U01–U19 | 19 | 11 | | | | | | 7 | 1 |
+| **Pantallas de la app** | | **103** | **38** | **22** | **10** | **5** | **3** | **11** | **9** | **5** |
+| **Páginas web del tutor** | T01–T04 | **4** | | | | | | | | **4** |
 
-- **MVP (E6.1 + E6.2 + E6.3):** 74 pantallas de la app + 3 páginas web = **77**.
-- **Condicionadas a menores (◆):** A09, A10, A15, A16, U16 y T01, T03, T04 = **8**. Si DEC-44 no habilita menores en el MVP, el MVP efectivo sería de 69 pantallas de la app y ninguna web.
-- **Cambio respecto a v0.1:** 95 → 106 (+11): A13, A14, A15, A16, N09 (renombrada desde N03b), S11, U17, U18, U19, T03, T04.
+Las pantallas de la app y las páginas web se cuentan por separado: son 103 pantallas de la app y 4 páginas web, no "107 pantallas".
+
+- **Beta y MVP (E6.1 + E6.2 + E6.3): 70 pantallas de la app** (38 + 22 + 10) y **ninguna página web**.
+- **Solo durante la beta (β):** A17, incluida en las 38 de E6.1.
+- **Habilitación futura de menores (MEN):** 5 pantallas de la app (A09, A10, A15, A16, U16) y 4 páginas web (T01–T04), documentadas y fuera de la beta y del MVP.
+- **Respecto a la v0.2:** la v0.2 contaba 74 pantallas de la app en el MVP (69 sin menores) y 3 páginas web. La v0.2.1 cuenta 69 + A17 = 70 y ninguna página web. El total de la app pasa de 102 a 103.
+- **Respecto a la v0.1:** 95 (93 de la app + 2 web) → 107 (103 + 4).
 
 ---
 
@@ -255,18 +274,17 @@ flowchart TD
     R -- "Sin sesión" --> A02["A02 Bienvenida"]
     R -- "Sesión lista" --> H01["H01 Inicio"]
     R -- "Otros estados" --> RT["Tabla de enrutamiento 4.3"]
-    A02 --> A03["A03 Fecha de nacimiento"]
-    A02 --> A06["A06 Iniciar sesión"]
-    A03 -- "Menor a la edad mínima" --> A11["A11 No disponible"]
-    A03 -- "Edad admitida" --> A04["A04 Registro"]
+    A02 -- "Crear cuenta" --> A17["A17 Invitación a la beta"]
+    A02 -- "Ya tengo cuenta" --> A06["A06 Iniciar sesión"]
+    A06 -- "Apple / Google sin cuenta" --> A17
+    A17 -- "Invitación válida" --> A03["A03 Fecha de nacimiento"]
+    A17 -- "Sin invitación válida" --> A17E["Estado de A17: acceso solo por invitación"]
+    A03 -- "Menos de 18" --> A11["A11 No disponible"]
+    A03 -- "18 o más" --> A04["A04 Registro"]
     A04 -- "Correo" --> A05["A05 Verificar correo"]
-    A04 -- "Apple / Google" --> Q{"¿Menor?"}
-    A05 --> Q
-    Q -- "Sí ◆" --> A09["A09 Consentimiento parental"] --> A10["A10 Esperando al tutor"]
-    Q -- "No" --> A14["A14 Tus datos y permisos"]
-    A10 -- "Tutor aprueba" --> A14
+    A05 --> A14["A14 Tus datos y permisos"]
+    A04 -- "Apple / Google" --> A14
     A14 --> O01["O01–O12 Onboarding"] --> H01
-    A06 -- "Apple / Google sin cuenta" --> A03
     A06 --> H01
     H01 --> N01["N01 Nutrición"]
     H01 --> E01["E01 Entrenamiento"]
@@ -274,6 +292,8 @@ flowchart TD
     H01 --> C01["C01 Actividad"]
     H01 --> U01["U01 Perfil"]
 ```
+
+Los recorridos de menores (A09, A10, T01) no forman parte de la beta; se conservan en F03 como habilitación futura (MEN).
 
 ### 4.2 Navegación inferior por entrega
 
@@ -298,9 +318,9 @@ El servidor indica el estado de la cuenta; A01 envía a la primera pantalla apli
 | 2 | Sin sesión | A02 |
 | 3 | Cuenta en periodo de eliminación | A13 |
 | 4 | Correo sin verificar | A05 |
-| 5 | Consentimiento parental pendiente, rechazado o caducado ◆ | A10 (con el estado correspondiente) |
-| 6 | Cumplió 18 años con cuenta de menor ◆ | A16 |
-| 7 | Cambió de tramo de 13–15 a 16–17 ◆ | A15 |
+| 5 | Consentimiento parental pendiente, rechazado o caducado ◆ MEN (no aplica en la beta) | A10 (con el estado correspondiente) |
+| 6 | Cumplió 18 años con cuenta de menor ◆ MEN (no aplica en la beta) | A16 |
+| 7 | Cambió de tramo de 13–15 a 16–17 ◆ MEN (no aplica en la beta) | A15 |
 | 8 | Consentimientos iniciales no revisados | A14 |
 | 9 | Onboarding incompleto | Primera pantalla O pendiente |
 | 10 | Bajada de plan con elementos por ajustar (E10) | U19 |
@@ -324,23 +344,24 @@ A06 aplica la misma tabla tras un inicio de sesión correcto.
 | ID | Elementos y botones → destino | Estados |
 |---|---|---|
 | **A01** | Logotipo; aplica la tabla 4.3 | Carga · Sin conexión (reintentar) |
-| **A02** | Lemas y láminas de valor · **Crear cuenta** → A03 · **Ya tengo cuenta** → A06 · Legal → A12 | — |
-| **A03** | Selector de fecha neutro · **Continuar** → A04 o A11 · Texto: por qué se pide. Si viene de Apple/Google, conserva la identidad sin crear la cuenta (RN-128) | Fecha inválida |
-| **A04** | **Continuar con Apple** · **Continuar con Google** · o correo y contraseña (indicador de fortaleza) · Casillas obligatorias: **Acepto los Términos** y **He leído el Aviso de privacidad** (→ A12). **No incluye el consentimiento de salud** (RN-129) · **Crear cuenta** → A05 (correo) o A09/A14 (Apple/Google) | Correo inválido · Contraseña débil · Error de red |
-| **A05** | Código de 6 dígitos · **Verificar** → A09 (menor ◆) o A14 · **Reenviar** (con espera) · **Cambiar correo** → A04 | Código incorrecto · Código caducado · Demasiados intentos |
-| **A06** | Apple · Google · correo y contraseña · **Entrar** → tabla 4.3 · **Olvidé mi contraseña** → A07. Apple/Google sin cuenta → A03 (RN-128) | Credenciales incorrectas (mensaje neutro, RN-06) · **Demasiados intentos: espera de N minutos** (RN-07) |
+| **A02** | Lemas y láminas de valor · Mención "Beta cerrada" · **Crear cuenta** → A17 · **Ya tengo cuenta** → A06 · Legal → A12 | — |
+| **A03** | Selector de fecha neutro · **Continuar** → A04 (18 o más) o A11 (menos de 18, RN-142) · Texto: por qué se pide. Si viene de Apple/Google, conserva la identidad sin crear la cuenta (RN-128) | Fecha inválida |
+| **A04** | **Continuar con Apple** · **Continuar con Google** · o correo y contraseña (indicador de fortaleza) · Casillas obligatorias: **Acepto los Términos** (incluidos los Términos de la beta, con el aviso de RN-141) y **He leído el Aviso de privacidad** (→ A12). **No incluye el consentimiento de salud** (RN-129) · **Crear cuenta** → A05 (correo) o A14 (Apple/Google) | Correo inválido · Contraseña débil · Error de red |
+| **A05** | Código de 6 dígitos · **Verificar** → A14 · **Reenviar** (con espera) · **Cambiar correo** → A04 | Código incorrecto · Código caducado · Demasiados intentos |
+| **A06** | Apple · Google · correo y contraseña · **Entrar** → tabla 4.3 · **Olvidé mi contraseña** → A07. Apple/Google sin cuenta → A17 → A03 (RN-128, RN-143) | Credenciales incorrectas (mensaje neutro, RN-06) · **Demasiados intentos: espera de N minutos** (RN-07) |
 | **A07** | Correo · **Enviar instrucciones** → mensaje neutro | Demasiados intentos |
 | **A08** | Nueva contraseña ×2 · **Guardar** → A06; cierra las demás sesiones | Enlace caducado → A07 |
-| **A09** ◆ | Explicación para el menor · Correo del tutor · **Enviar solicitud** → A10 · Contenido legal: [PEND DEC-30] | Correo inválido · Mismo correo que el del menor |
-| **A10** ◆ | **Pendiente:** fecha de caducidad visible (RN-04) · **Reenviar** · **Cambiar correo del tutor** → A09 · **Cancelar solicitud y eliminar mis datos** (M03) · **Cerrar sesión**. **Rechazado:** explicación neutra; los datos se eliminan; **Cerrar**. **Caducado:** explicación; **Volver a solicitar** → A09 o **Cerrar** | Tres estados descritos |
-| **A11** | Mensaje amable; sin formulario ni recogida de datos · **Cerrar**. Si el dispositivo recuerda el bloqueo, A03 no permite reintentar [PEND E-12] | — |
-| **A12** | Términos · Aviso de privacidad · Aviso para tutores ◆ · versión y fecha de cada documento | — |
+| **A09** ◆ MEN | Explicación para el menor · Correo del tutor · **Enviar solicitud** → A10 · Contenido legal: [PEND DEC-30] | Correo inválido · Mismo correo que el del menor |
+| **A10** ◆ MEN | **Pendiente:** fecha de caducidad visible (RN-04) · **Reenviar** · **Cambiar correo del tutor** → A09 · **Cancelar solicitud y eliminar mis datos** (M03) · **Cerrar sesión**. **Rechazado:** explicación neutra; los datos se eliminan; **Cerrar**. **Caducado:** explicación; **Volver a solicitar** → A09 o **Cerrar** | Tres estados descritos |
+| **A11** | Mensaje amable; durante la beta: "Por ahora, la beta de Definite Fitnes es solo para personas mayores de 18 años" (RN-142, texto propuesto); sin formulario ni recogida de datos; no sugiere cambiar la fecha · **Cerrar**. Si el dispositivo recuerda el bloqueo, A03 no permite reintentar [PEND E-12] | — |
+| **A12** | Términos · **Términos de la beta** β (con RN-141) · Aviso de privacidad · Aviso para tutores ◆ MEN · versión y fecha de cada documento | — |
 | **A13** | "Tu cuenta se eliminará el [fecha]" · **Reactivar mi cuenta** → tabla 4.3 · **Mantener la eliminación** → cierra sesión | — |
-| **A14** | Explicación por capas · Interruptores por categoría (propuesta según DEC-42): **Datos de salud** (alergias, consideraciones de seguridad, medidas) con la lista de funciones que dependen de ellos · **Analítica de uso** (desactivada por defecto, RN-133) · Enlaces a A12 · **Continuar** → O01 (con cualquier combinación, incluida "ninguno") · Menores ◆: categorías según DEC-34 | — |
-| **A15** ◆ | Contenido pendiente de DEC-32/DEC-33: qué cambia al pasar a 16–17 · **Entendido** → H01. Aviso al tutor por correo | — |
-| **A16** ◆ | "Ahora tu cuenta es tuya": explicación de la desvinculación del tutor · Revisión de consentimientos propios (como A14) · **Continuar** → H01. El tutor deja de tener funciones; se le notifica [PEND DEC-39] | — |
+| **A14** | Explicación por capas · Interruptores por categoría (propuesta según DEC-42): **Datos de salud** (alergias, consideraciones de seguridad, medidas) con la lista de funciones que dependen de ellos · **Analítica de uso** (desactivada por defecto, RN-133) · Enlaces a A12 · **Continuar** → O01 (con cualquier combinación, incluida "ninguno") · Menores ◆ MEN: categorías según DEC-34 | — |
+| **A15** ◆ MEN | Contenido pendiente de DEC-32/DEC-33: qué cambia al pasar a 16–17 · **Entendido** → H01. Aviso al tutor por correo | — |
+| **A16** ◆ MEN | "Ahora tu cuenta es tuya": explicación de la desvinculación del tutor · Revisión de consentimientos propios (como A14) · **Continuar** → H01. El tutor deja de tener funciones; se le notifica [PEND DEC-39] | — |
+| **A17** β | Qué es la beta: cerrada, gratuita y por invitación · **Aviso: la gratuidad de la beta no es permanente** (RN-141) · Campo **código de invitación** (llega rellenado si se abre desde un enlace) · **Continuar** → A03 · **No tengo invitación** → explicación [PEND DEC-69] · **Ya tengo cuenta** → A06 | Código inválido · Código usado o caducado [PEND DEC-69] · Demasiados intentos |
 
-### 5.2 Tutor (web) ◆
+### 5.2 Tutor (web) ◆ MEN — fuera de la beta y del MVP
 
 | ID | Elementos y botones | Estado |
 |---|---|---|
@@ -475,7 +496,7 @@ Todo el módulo depende de DEC-40 (moderación y seguridad) y, para menores, de 
 | **U02** | Nombre y saludo · objetivos · **módulos activos** · actividades y modalidad principal · experiencia y disponibilidad · preferencias · alergias 🔒 · consideraciones 🔒 · medidas 🔒 (adultos) · unidades · fecha de nacimiento (solo lectura) | E6.1 |
 | **U03** | Apariencia · Privacidad · Seguridad · Notificaciones · Suscripción (E10) · Integraciones (E10) · Ayuda · Legal → A12 · versión · **Cerrar sesión** → A02 | E6.1 |
 | **U04** | Tema oscuro (tema claro: POST) · color de acento · tamaño de texto · reducir animaciones · paletas y tarjetas ★ (E10) · **Organizar inicio** → H03 (E10) | E6.1 |
-| **U05** | **Consentimientos y permisos** → U18 · Comunidad (E9) · Datos del asistente → I02 (E8) · **Bloqueados** → S10 (E9) · **Exportar** → U12 · **Eliminar cuenta** → U13 · **Mi tutor** → U16 ◆ | E6.1 |
+| **U05** | **Consentimientos y permisos** → U18 · Comunidad (E9) · Datos del asistente → I02 (E8) · **Bloqueados** → S10 (E9) · **Exportar** → U12 · **Eliminar cuenta** → U13 · **Mi tutor** → U16 ◆ MEN | E6.1 |
 | **U06** | Cambiar correo · cambiar contraseña (reautenticación) · sesiones abiertas: **Cerrar / Cerrar todas** | E6.1 |
 | **U07** | Interruptores por tipo de notificación · horario de silencio (menores: [PEND DEC-32/33]) | E6.1 |
 | **U08** | Plan actual · renovación · **Ver planes** → U09 · **Grupo familiar** → U10 · **Gestionar o cancelar** → tienda · **Restaurar compras** | E10 |
@@ -486,7 +507,7 @@ Todo el módulo depende de DEC-40 (moderación y seguridad) y, para menores, de 
 | **U13** | Qué se borra · periodo de gracia (RN-87) · avisos si hay suscripción o grupo familiar (E10) · **Exportar antes** → U12 · contraseña + **Eliminar mi cuenta** (M03) | E6.1 |
 | **U14** | Preguntas frecuentes · **Contactar a soporte** · recursos de ayuda y crisis de México · **Ejercer mis derechos ARCO** (RN-90) · reportar un problema | E6.1 |
 | **U15** | Apple Health / Health Connect, Spotify: estado · **Conectar** (permiso del sistema + consentimiento 🔒) · **Desconectar** → M04 | E10 |
-| **U16** ◆ | Quién autorizó la cuenta · qué puede y no puede hacer el tutor [PEND DEC-39] · **Pedir permiso** para una función → correo → T03 · estado de las solicitudes · resumen para el tutor [PEND DEC-39] | E6.1 |
+| **U16** ◆ MEN | Quién autorizó la cuenta · qué puede y no puede hacer el tutor [PEND DEC-39] · **Pedir permiso** para una función → correo → T03 · estado de las solicitudes · resumen para el tutor [PEND DEC-39] | MEN |
 | **U17** | Quién invita · qué implica (solo se comparte la suscripción; nadie verá tus datos) · aviso si ya paga Premium (RN-107) · **Aceptar** → U10 · **Rechazar**. Sin sesión: A06 o registro (A03…) y vuelve aquí. Menores: [PEND DEC-38] | E10 |
 | **U18** | Lista de consentimientos con estado y fecha · **Otorgar** / **Retirar** (M03 con explicación de qué pasa con los datos ya guardados, RN-139) · analítica · enlaces a A12 · **Ejercer derechos ARCO** → U14 | E6.1 |
 | **U19** | "Tu plan cambió": elementos que exceden el plan Gratis · elegir cuáles mantener activos; el resto queda en solo lectura (RN-92) · **Exportar** → U12 · **Ver planes** → U09 | E10 |
@@ -504,10 +525,10 @@ Todo el módulo depende de DEC-40 (moderación y seguridad) y, para menores, de 
 | **Pendiente de envío** | "Se enviará al reconectar" con reintento automático | E09 |
 | **Requiere consentimiento** | M01: qué datos, para qué, **Permitir** / **Ahora no**; nunca insistente | Funciones 🔒 |
 | **No disponible para tu edad** | Mensaje neutral (RN-126) | Funciones restringidas por políticas |
-| **Requiere permiso del tutor** ◆ | Explicación + **Pedir permiso** → T03 | Funciones que el tutor autoriza |
+| **Requiere permiso del tutor** ◆ MEN | Explicación + **Pedir permiso** → T03 | Funciones que el tutor autoriza |
 | **Todavía no disponible** | Solo en entregas internas: la función llega en una entrega posterior | E6.1, E6.2 |
-| **Demasiados intentos** | Tiempo de espera visible | A05, A06, A07 |
-| **Enlace caducado o usado** | Explicación y cómo obtener uno nuevo | A08, T01, T03, U17 |
+| **Demasiados intentos** | Tiempo de espera visible | A05, A06, A07, A17 |
+| **Enlace caducado o usado** | Explicación y cómo obtener uno nuevo | A08, A17, U17; T01 y T03 (MEN) |
 
 ### 6.1 Transiciones
 
@@ -521,13 +542,13 @@ Todo el módulo depende de DEC-40 (moderación y seguridad) y, para menores, de 
 ### Registro y acceso
 
 **F01 · Registro de adulto con correo** [E6.1]
-A02 → A03 → A04 (correo) → A05 → A14 → O01…O12 → H01
+A02 → A17 → A03 → A04 (correo) → A05 → A14 → O01…O12 → H01
 
 **F02 · Registro de adulto con Apple o Google** [E6.1] (DEC-09)
-A02 → A03 → A04 (Apple/Google) → A14 → O01…O12 → H01
-Variante desde A06: Apple/Google sin cuenta → **A03** → A04 → A14 → …
+A02 → A17 → A03 → A04 (Apple/Google) → A14 → O01…O12 → H01
+Variante desde A06: Apple/Google sin cuenta → **A17** → **A03** → A04 → A14 → …
 
-**F03 · Registro de menor** ◆ [E6.1, condicionado a DEC-44]
+**F03 · Registro de menor** ◆ MEN — fuera de la beta y del MVP (DEC-44); documentado para la habilitación futura
 A02 → A03 → A04 → A05 → A09 → A10 → *(tutor: correo → T01)*
 - Tutor autoriza → A14 (categorías según DEC-34) → O01…O12 → H01
 - Tutor rechaza → A10 estado "rechazado" → datos eliminados
@@ -535,6 +556,12 @@ A02 → A03 → A04 → A05 → A09 → A10 → *(tutor: correo → T01)*
 
 **F04 · Recuperación de cuenta** [E6.1]
 A06 → A07 → *(correo)* → A08 → A06 → tabla 4.3
+
+**F26 · Acceso a la beta por invitación** [E6.1] (DEC-68)
+Enlace o código de invitación → A17 → código válido → A03 → F01 o F02. Código inválido, usado o caducado → estado de A17. Sin invitación → A17 explica que la beta es por invitación [PEND DEC-69].
+
+**F27 · Persona menor de 18 intenta registrarse en la beta** [E6.1] (DEC-44)
+A17 → A03 → fecha con menos de 18 años → A11 ("la beta es solo para personas mayores de 18"). No se crea cuenta ni se guardan datos personales (RN-142). Qué ocurre con el código de invitación usado: DEC-69.
 
 ### Consentimientos y privacidad
 
@@ -554,7 +581,7 @@ flowchart TD
 **F06 · Permisos del sistema** [E6.1+]
 Notificaciones: O11 o la primera vez que se crea un recordatorio (C03, N08) → explicación → permiso del sistema. Si se deniega: la app funciona sin recordatorios y U07 explica cómo activarlo en los ajustes del teléfono.
 
-**F07 · Permiso del tutor para una función** ◆ [E6.1, condicionado]
+**F07 · Permiso del tutor para una función** ◆ MEN — fuera de la beta
 Menor intenta una función que requiere permiso → estado "Requiere permiso del tutor" → **Pedir permiso** (o U16) → correo al tutor → T03 → **Permitir** / **No permitir** → U16 muestra el resultado y notifica al menor.
 
 **F08 · Exportar datos** [E6.1]
@@ -585,10 +612,10 @@ H01 → N01 → **Añadir** → N02 → N03 → **Añadir a** → N01
 
 ### Cambios de edad ◆
 
-**F16 · Paso de 13–15 a 16–17** [E6.1, condicionado; contenido según DEC-32/33]
+**F16 · Paso de 13–15 a 16–17** ◆ MEN — fuera de la beta; contenido según DEC-32/33
 A01 detecta el cambio de tramo → A15 → **Entendido** → H01. El servicio de políticas aplica la configuración del nuevo tramo; el tutor recibe un correo.
 
-**F17 · Mayoría de edad** [E6.1, condicionado]
+**F17 · Mayoría de edad** ◆ MEN — fuera de la beta
 
 ```mermaid
 flowchart TD
@@ -613,7 +640,7 @@ flowchart TD
     SES -- "No, tiene cuenta" --> A06["A06 Iniciar sesión"] --> U17
     SES -- "No tiene cuenta" --> A03["A03 Fecha de nacimiento"]
     A03 -- "Adulto" --> REG["A04, A05, A14, onboarding"] --> U17
-    A03 -- "Menor" --> PEND["Pendiente DEC-38"]
+    A03 -- "Menor" --> PEND["No admitido (DEC-44); futuro: DEC-38"]
     U17 -- "Aceptar" --> U10["U10 Grupo familiar"]
     U17 -- "Rechazar" --> H01["H01 Inicio"]
 ```
@@ -628,7 +655,7 @@ flowchart TD
 
 | Desde | Hacia | Recorrido |
 |---|---|---|
-| MVP sin límites | Planes de E10 | Aviso previo dentro de la app → reglas de transición [PEND DEC-67] → U19 si hay elementos que exceden el plan Gratis. Nada se borra (RN-92) |
+| Beta gratuita (DEC-68) | Planes comerciales (E10) | Aviso de no gratuidad permanente desde la invitación (RN-141) → aviso previo → política de transición [PEND DEC-67] → U19 si hay elementos que exceden el plan Gratis. Que no se borre nada (RN-92) es una propuesta |
 | Gratis | Premium | U08 → U09 → tienda → U08 actualizado |
 | Premium | Gratis (cancelación o pago fallido) | Aviso antes del fin del periodo → al terminar → U19 |
 | Premium individual | Familiar (como integrante) | U17 con aviso RN-107 → U10 → recordatorio de cancelar la suscripción individual en la tienda |
@@ -657,7 +684,7 @@ U03 → U15 → **Conectar** → consentimiento 🔒 (M01 si falta) → permiso 
 
 Refleja en la navegación las reglas de privacidad y permisos.
 
-| Función / pantallas | Sin consentimiento de salud | Menor (◆) | En el MVP sin planes |
+| Función / pantallas | Sin consentimiento de salud | Menor (◆ MEN: futuro, fuera de la beta) | En la beta y el MVP (sin planes) |
 |---|---|---|---|
 | Alergias (O08, N03, U02) | Oculto; aviso general + M01 | DEC-34, DEC-36 | Disponible |
 | Consideraciones de seguridad (O09, E03, E05, U02) | Oculto; precauciones generales siempre visibles | DEC-34 | Disponible |
@@ -681,8 +708,9 @@ Refleja en la navegación las reglas de privacidad y permisos.
 | Recordatorio de hábito | N08 | E6.3 |
 | Predicción actualizada u objetivo alcanzado | P04 | E6.2 |
 | Recuperación de contraseña | A08 | E6.1 |
+| Invitación a la beta | A17 (código rellenado) | E6.1 β |
 | Exportación lista | U12 | E6.1 |
-| Correos al tutor ◆ | T01, T03, T04 | E6.1 (condicionado) |
+| Correos al tutor ◆ | T01, T03, T04 | MEN |
 | Logro obtenido | G02 | E7 |
 | Solicitud de amistad / invitación a reto | S04 / S07 | E9 |
 | Invitación familiar | U17 | E10 |
@@ -703,10 +731,10 @@ Sin sesión: primero A06 (o el registro en el caso de U17) y después el destino
 
 | Comprobación | Resultado |
 |---|---|
-| IDs únicos | Sí: 102 pantallas de la app, 4 páginas web y 4 componentes, sin duplicados |
+| IDs únicos | Sí: 103 pantallas de la app, 4 páginas web y 4 componentes, sin duplicados |
 | Pantallas citadas en flujos existen en el inventario | Sí |
 | Pantallas sin ruta de acceso | Ninguna: la columna "Se accede desde" está completa |
-| Conteo por etapa | 42 + 22 + 10 + 5 + 3 + 11 + 9 = 102 app; 3 + 1 = 4 web |
+| Conteo por etapa | 38 + 22 + 10 + 5 + 3 + 11 + 9 + 5 (MEN) = 103 app; 4 web (MEN) |
 | MVP separado de etapas posteriores | Sí: columna "Etapa" en el inventario y en cada módulo |
 | Reglas de privacidad reflejadas en flujos | F05–F10, F25 y matriz §8 |
 | Decisiones pendientes marcadas | Sí, con [PEND DEC-xx] |
