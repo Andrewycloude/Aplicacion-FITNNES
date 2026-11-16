@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2.1 — propuesta |
+| **Versión** | 0.2.2 — propuesta |
 | **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. La v0.2 se conserva en el historial de Git (commit a5d6863). |
+| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921). |
 | **Documentos relacionados** | [05 — Mapa de navegación v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad de la auditoría](07-TRAZABILIDAD-AUDITORIA-v0.2.md) · [03 — Auditoría cruzada](03-AUDITORIA-CRUZADA.md) |
 | **Nombre** | "Definite Fitnes" es **provisional**: su validación como marca está pendiente (DEC-10, DEC-53). |
 
@@ -27,13 +27,14 @@ Cada regla y cada decisión lleva una etiqueta. **Ninguna regla sin la etiqueta 
 
 | Etiqueta | Significado |
 |---|---|
-| **E6.1** | MVP, entrega 1: acceso, registro, onboarding, inicio y perfil |
-| **E6.2** | MVP, entrega 2: entrenamiento y progreso |
-| **E6.3** | MVP, entrega 3: nutrición |
-| **E7** | Gamificación y avatar |
-| **E8** | Asistente de IA |
-| **E9** | Comunidad |
-| **E10** | Suscripciones e integraciones |
+| **ET1–ET11** | Etapas del plan. **Desde la v0.2.2 las etapas llevan el prefijo ET** (AF-06) para no confundirse con las pantallas E01–E11 de Entrenamiento. Los documentos 01–03 y las versiones anteriores usan la notación E1–E11 |
+| **ET6.1** | MVP, entrega 1: acceso, registro, onboarding, inicio y perfil |
+| **ET6.2** | MVP, entrega 2: entrenamiento y progreso |
+| **ET6.3** | MVP, entrega 3: nutrición |
+| **ET7** | Gamificación y avatar |
+| **ET8** | Asistente de IA |
+| **ET9** | Comunidad |
+| **ET10** | Suscripciones e integraciones |
 | **POST** | Pospuesto fuera del MVP; etapa exacta por definir (DEC-59) |
 | **MEN** | Habilitación futura de menores (13–17) y de la experiencia del tutor. **Fuera de la beta y del MVP** (DEC-44); etapa por definir |
 | **β** | Solo durante la beta cerrada (DEC-68) |
@@ -69,6 +70,17 @@ Incorpora **solo** las dos decisiones aprobadas por el propietario; ninguna otra
 5. DEC-67 se redefine como política de transición de la beta gratuita a planes comerciales (pendiente) y se añade DEC-69 (mecanismo de invitaciones, pendiente).
 6. Se reordena §12 según lo que bloquea la beta y lo que bloquea la habilitación futura de menores.
 
+### 0.6 Cambios en la v0.2.2
+
+Correcciones documentales de la auditoría final y dos incorporaciones pedidas por el propietario. **Ninguna decisión aprobada cambia y ninguna propuesta pasa a ser regla aprobada.**
+
+1. **AF-06:** las etapas se escriben con el prefijo **ET** (ET1–ET11, ET6.1–ET6.3) para no confundirse con las pantallas E01–E11. Los documentos 01–03 y las versiones anteriores conservan la notación E.
+2. **AF-13:** los objetivos corporales de menores vuelven a figurar como pendientes (DEC-35); DEC-14 solo excluye las predicciones corporales.
+3. **AF-17:** §12 se genera desde la tabla única de bloqueos del registro (sección 6) y ahora incluye DEC-54, DEC-55, DEC-56 y DEC-65 en ET6.1.
+4. **AF-03, AF-16, AF-28:** DEC-65 citada en RN-133; referencia de RN-114 corregida a F16/F17; RN-118 a RN-120 con formato de regla.
+5. **Correo transaccional:** requisitos formales en §8.5; proveedor pendiente (DEC-72).
+6. **Documentos legales:** requisito previo para invitar a usuarios reales (DEC-70, RN-144); redacción y validación pendientes (DEC-71).
+
 ---
 
 ## 1. Descripción del producto
@@ -79,7 +91,7 @@ Incorpora **solo** las dos decisiones aprobadas por el propietario; ninguna otra
 - **Plataformas:** iOS y Android, prioridad móvil. Optimización específica para tablets: **POST** (DEC-03). [APR]
 - **Primer mercado:** México, en español. Arquitectura preparada para otros países e idiomas (DEC-06). [APR]
 - **Primer lanzamiento:** beta cerrada, gratuita, por invitación, solo para mayores de 18 años y sin cobros ni suscripciones (DEC-68, DEC-44). La gratuidad de la beta no es permanente (RN-141). [APR]
-- **Modelo de negocio:** freemium con suscripción; los pagos se implementan en E10 (DEC-01, DEC-22). [APR]
+- **Modelo de negocio:** freemium con suscripción; los pagos se implementan en ET10 (DEC-01, DEC-22). [APR]
 
 ### 1.1 Qué no es [APR]
 
@@ -137,7 +149,7 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 - Deportista de una disciplina: métricas propias de su deporte.
 - Usuario de gimnasio con experiencia: registro rápido de series, historial y estadísticas.
 - Persona enfocada en hábitos: alimentación, hidratación, descanso y constancia.
-- Familia: varias personas con cuentas independientes bajo un mismo pago (E10).
+- Familia: varias personas con cuentas independientes bajo un mismo pago (ET10).
 - Madre, padre o tutor: autoriza y gestiona permisos de la cuenta de un menor (detalle pendiente).
 
 ### 3.3 Roles
@@ -173,19 +185,20 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 
 | Servicio | Responsabilidad | Etapa |
 |---|---|---|
-| **Identidad y acceso** | Registro, inicio de sesión (correo, Apple, Google), sesiones, recuperación | E6.1 |
-| **Servicio de políticas** | Decide si una función está disponible para un usuario concreto (ver 4.3) | E6.1 |
-| **Consentimientos** | Registra qué consintió cada usuario o tutor, cuándo y con qué versión del aviso; permite retirarlo | E6.1 |
-| **Perfil central** | Datos de perfil, módulos activos, preferencias | E6.1 |
-| **Derechos sobre los datos** | Exportación, eliminación, periodo de gracia, solicitudes ARCO | E6.1 |
-| **Notificaciones** | Recordatorios y avisos, respetando las políticas | E6.1 (uso real desde E6.2) |
-| **Catálogo de contenido** | Ejercicios, alimentos, recetas y programas, cada elemento con su fuente | E6.2 / E6.3 |
-| **Eventos de actividad** | Registro de hechos (sesión completada, hábito cumplido) que usarán Progreso y, desde E7, la gamificación | E6.2 |
-| **Derechos de plan** | Qué incluye cada plan; en el MVP todos los usuarios tienen las funciones disponibles (DEC-01) | E6.1 (estructura) / E10 (planes reales) |
-| **Registro de auditoría** | Eventos de seguridad y accesos de soporte, sin datos sensibles | E6.1 |
-| **Pasarela de IA** | Acceso de la IA a datos autorizados mediante funciones limitadas | E8 |
-| **Compartir y comunidad** | Publicación explícita, amistades, bloqueos, reportes | E9 |
-| **Integraciones** | Apple Health, Health Connect, wearables, Spotify | E10 |
+| **Identidad y acceso** | Registro, inicio de sesión (correo, Apple, Google), sesiones, recuperación | ET6.1 |
+| **Servicio de políticas** | Decide si una función está disponible para un usuario concreto (ver 4.3) | ET6.1 |
+| **Consentimientos** | Registra qué consintió cada usuario o tutor, cuándo y con qué versión del aviso; permite retirarlo | ET6.1 |
+| **Perfil central** | Datos de perfil, módulos activos, preferencias | ET6.1 |
+| **Derechos sobre los datos** | Exportación, eliminación, periodo de gracia, solicitudes ARCO | ET6.1 |
+| **Notificaciones** | Recordatorios y avisos, respetando las políticas | ET6.1 (uso real desde ET6.2) |
+| **Correo transaccional** | Mensajes de cuenta y seguridad (verificación, recuperación, avisos). Requisitos en §8.5; proveedor pendiente (DEC-72) | ET6.1 |
+| **Catálogo de contenido** | Ejercicios, alimentos, recetas y programas, cada elemento con su fuente | ET6.2 / ET6.3 |
+| **Eventos de actividad** | Registro de hechos (sesión completada, hábito cumplido) que usarán Progreso y, desde ET7, la gamificación | ET6.2 |
+| **Derechos de plan** | Qué incluye cada plan; en el MVP todos los usuarios tienen las funciones disponibles (DEC-01) | ET6.1 (estructura) / ET10 (planes reales) |
+| **Registro de auditoría** | Eventos de seguridad y accesos de soporte, sin datos sensibles | ET6.1 |
+| **Pasarela de IA** | Acceso de la IA a datos autorizados mediante funciones limitadas | ET8 |
+| **Compartir y comunidad** | Publicación explícita, amistades, bloqueos, reportes | ET9 |
+| **Integraciones** | Apple Health, Health Connect, wearables, Spotify | ET10 |
 
 ### 4.3 Servicio de políticas
 
@@ -216,19 +229,19 @@ El **perfil central** alimenta a todos los módulos; cada módulo produce datos 
 
 | Origen | Destino | Qué fluye | Etapa |
 |---|---|---|---|
-| Perfil / onboarding | Todos | Tramo de edad, objetivos, módulos activos, actividades, preferencias | E6.1 |
-| Consentimientos y políticas | Todos | Qué funciones están disponibles | E6.1 |
-| Entrenamiento | Progreso | Sesiones → estadísticas, marcas, tendencias, predicciones | E6.2 |
-| Entrenamiento | Inicio | Resumen del día y próximas actividades | E6.2 |
-| Nutrición | Progreso | Hábitos y promedios | E6.3 |
-| Nutrición | Inicio | Resumen del día y hábitos | E6.3 |
-| Progreso | Inicio | Objetivos activos y avance | E6.2 |
-| Entrenamiento, nutrición, progreso | Gamificación | Eventos de constancia | Registro desde E6.2; uso en E7 |
-| Gamificación | Avatar / personalización | Recompensas | E7 |
-| Progreso | Asistente | Resúmenes autorizados | E8 |
-| Gamificación / entrenamiento | Comunidad | Lo que el usuario decide compartir | E9 |
-| Integraciones | Entrenamiento / progreso | Datos importados con su origen | E10 |
-| Plan | Todos | Funciones incluidas | E10 |
+| Perfil / onboarding | Todos | Tramo de edad, objetivos, módulos activos, actividades, preferencias | ET6.1 |
+| Consentimientos y políticas | Todos | Qué funciones están disponibles | ET6.1 |
+| Entrenamiento | Progreso | Sesiones → estadísticas, marcas, tendencias, predicciones | ET6.2 |
+| Entrenamiento | Inicio | Resumen del día y próximas actividades | ET6.2 |
+| Nutrición | Progreso | Hábitos y promedios | ET6.3 |
+| Nutrición | Inicio | Resumen del día y hábitos | ET6.3 |
+| Progreso | Inicio | Objetivos activos y avance | ET6.2 |
+| Entrenamiento, nutrición, progreso | Gamificación | Eventos de constancia | Registro desde ET6.2; uso en ET7 |
+| Gamificación | Avatar / personalización | Recompensas | ET7 |
+| Progreso | Asistente | Resúmenes autorizados | ET8 |
+| Gamificación / entrenamiento | Comunidad | Lo que el usuario decide compartir | ET9 |
+| Integraciones | Entrenamiento / progreso | Datos importados con su origen | ET10 |
+| Plan | Todos | Funciones incluidas | ET10 |
 
 ---
 
@@ -238,20 +251,20 @@ El **perfil central** alimenta a todos los módulos; cada módulo produce datos 
 
 | Etapa | Contenido | Estado |
 |---|---|---|
-| E1 | Diagnóstico | Completada |
-| E2 | PRD y mapa de navegación | En curso (esta propuesta) |
-| E3 | Design System y prototipos | Pendiente |
-| E4 | Tecnologías y arquitectura técnica | Pendiente |
-| E5 | Modelo de datos y backend | Pendiente |
-| **E6.1** | Acceso por invitación (β), registro, verificación de edad (18+), consentimientos, onboarding, inicio, perfil, privacidad, exportación y eliminación | Pendiente |
-| **E6.2** | Entrenamiento, actividad (calendario e historial) y progreso con predicciones | Pendiente |
-| **E6.3** | Nutrición con base de alimentos acotada | Pendiente |
-| **Beta cerrada** | Primera salida del MVP (E6.1–E6.3) a personas adultas invitadas; gratuita y sin cobros (DEC-68) | Pendiente |
-| E7 | Gamificación y avatar | Pendiente |
-| E8 | Asistente de IA | Pendiente |
-| E9 | Comunidad | Pendiente |
-| E10 | Suscripciones, pagos e integraciones | Pendiente |
-| E11 | Pruebas y lanzamiento | Pendiente |
+| ET1 | Diagnóstico | Completada |
+| ET2 | PRD y mapa de navegación | En curso (esta propuesta) |
+| ET3 | Design System y prototipos | Pendiente |
+| ET4 | Tecnologías y arquitectura técnica | Pendiente |
+| ET5 | Modelo de datos y backend | Pendiente |
+| **ET6.1** | Acceso por invitación (β), registro, verificación de edad (18+), consentimientos, onboarding, inicio, perfil, privacidad, exportación y eliminación | Pendiente |
+| **ET6.2** | Entrenamiento, actividad (calendario e historial) y progreso con predicciones | Pendiente |
+| **ET6.3** | Nutrición con base de alimentos acotada | Pendiente |
+| **Beta cerrada** | Primera salida del MVP (ET6.1–ET6.3) a personas adultas invitadas; gratuita y sin cobros (DEC-68). **Requisito previo para invitar a usuarios reales:** documentos legales validados (DEC-70, DEC-71) | Pendiente |
+| ET7 | Gamificación y avatar | Pendiente |
+| ET8 | Asistente de IA | Pendiente |
+| ET9 | Comunidad | Pendiente |
+| ET10 | Suscripciones, pagos e integraciones | Pendiente |
+| ET11 | Pruebas y lanzamiento | Pendiente |
 | MEN | Habilitación futura de menores y experiencia del tutor (incluidas sus páginas web) | Etapa por definir; requiere validación legal |
 
 **RN-127** Cada entrega del MVP se prueba y se revisa contigo antes de empezar la siguiente. [APR] DEC-02
@@ -262,18 +275,18 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 | Módulo | MVP | Posterior |
 |---|---|---|
-| 1. Registro y onboarding | **E6.1**: invitación a la beta, correo, Apple y Google, verificación de edad (18+), consentimientos separados, onboarding condicional | Consentimiento parental y experiencias por edad (MEN); verificación en dos pasos (POST) |
-| 2. Inicio | **E6.1** estructura; tarjetas de cada módulo al llegar su entrega | Organización personalizada del inicio (E10); recomendaciones con IA (E8) |
-| 3. Nutrición | **E6.3**: resumen, registro, base acotada, detalle con fuente, alternativas, alimento propio, hábitos, historial, **recetas básicas** | **Biblioteca amplia de recetas (POST)**; código de barras y foto de platillos (POST) |
-| 4. Entrenamiento | **E6.2**: disciplinas con métricas propias (cuáles: DEC-47) + registro genérico para cualquier actividad; biblioteca, rutinas, sesión, historial, **programas básicos** | **Programas extensos (POST)**; más disciplinas con métricas propias (POST); GPS en vivo (POST); programas avanzados (E10) |
-| 5. Progreso | **E6.2**: objetivos, registros, gráficos, tendencias, predicciones con rango y calidad | Comparación de periodos y estadísticas ampliadas (E10) |
-| 6. Personalización | **E6.1**: tema oscuro, color de acento básico, tamaño de texto, reducción de animaciones | **Tema claro (POST)**; paletas, tarjetas, organización (E10) |
-| 7. Gamificación | Registro de eventos desde E6.2 | Todo el módulo (E7) |
-| 8. Avatar | Inicial o avatar simple por defecto (foto: DEC-56) | Avatar personalizable (E7) |
-| 9. Comunidad | — | Todo el módulo (E9) |
-| 10. Asistente IA | — | Todo el módulo (E8) |
-| 11. Integraciones | Notificaciones | Apple Health, Health Connect, wearables, Spotify (E10) |
-| Suscripciones | **Sin restricciones comerciales** (DEC-01) | Planes y pagos (E10) |
+| 1. Registro y onboarding | **ET6.1**: invitación a la beta, correo, Apple y Google, verificación de edad (18+), consentimientos separados, onboarding condicional | Consentimiento parental y experiencias por edad (MEN); verificación en dos pasos (POST) |
+| 2. Inicio | **ET6.1** estructura; tarjetas de cada módulo al llegar su entrega | Organización personalizada del inicio (ET10); recomendaciones con IA (ET8) |
+| 3. Nutrición | **ET6.3**: resumen, registro, base acotada, detalle con fuente, alternativas, alimento propio, hábitos, historial, **recetas básicas** | **Biblioteca amplia de recetas (POST)**; código de barras y foto de platillos (POST) |
+| 4. Entrenamiento | **ET6.2**: disciplinas con métricas propias (cuáles: DEC-47) + registro genérico para cualquier actividad; biblioteca, rutinas, sesión, historial, **programas básicos** | **Programas extensos (POST)**; más disciplinas con métricas propias (POST); GPS en vivo (POST); programas avanzados (ET10) |
+| 5. Progreso | **ET6.2**: objetivos, registros, gráficos, tendencias, predicciones con rango y calidad | Comparación de periodos y estadísticas ampliadas (ET10) |
+| 6. Personalización | **ET6.1**: tema oscuro, color de acento básico, tamaño de texto, reducción de animaciones | **Tema claro (POST)**; paletas, tarjetas, organización (ET10) |
+| 7. Gamificación | Registro de eventos desde ET6.2 | Todo el módulo (ET7) |
+| 8. Avatar | Inicial o avatar simple por defecto (foto: DEC-56) | Avatar personalizable (ET7) |
+| 9. Comunidad | — | Todo el módulo (ET9) |
+| 10. Asistente IA | — | Todo el módulo (ET8) |
+| 11. Integraciones | Notificaciones | Apple Health, Health Connect, wearables, Spotify (ET10) |
+| Suscripciones | **Sin restricciones comerciales** (DEC-01) | Planes y pagos (ET10) |
 | Tablets | La app se usa en tablets **sin optimización específica** (viabilidad técnica: DEC-66) | **Diseños de dos paneles y barra lateral (POST)** |
 | Modo sin conexión | **Solo la sesión de entrenamiento en curso** (DEC-04) | Sincronización sin conexión completa (POST) |
 | Menores y tutores | **No incluidos** (DEC-44): beta y MVP solo 18+ | Consentimiento parental, experiencias 13–15 y 16–17, páginas web del tutor (MEN) |
@@ -283,7 +296,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 ## 6. Requisitos funcionales por módulo
 
-### 6.1 Módulo 1 — Registro, acceso y onboarding [E6.1]
+### 6.1 Módulo 1 — Registro, acceso y onboarding [ET6.1]
 
 **Funciones:** bienvenida; **invitación a la beta** (β); verificación de edad antes de cualquier dato personal; registro con correo o con Apple/Google; verificación de correo; inicio de sesión; recuperación de cuenta; consentimientos separados; onboarding condicional. La solicitud de consentimiento parental queda para la habilitación futura de menores (MEN).
 
@@ -312,7 +325,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 - **RN-130** Los consentimientos se solicitan por separado y por categoría, en una pantalla propia (A14), y se pueden otorgar después o retirar en cualquier momento (U18). [PROP] (la granularidad exacta: DEC-42 [VAL])
 - **RN-131** Si el usuario no otorga un consentimiento, **las funciones que dependen de esos datos permanecen desactivadas** y la app explica cómo activarlas; el resto funciona con normalidad. [APR] DEC-08
 - **RN-132** Al intentar usar una función que requiere un consentimiento no otorgado, se muestra la solicitud en contexto (M01), nunca de forma insistente. [PROP]
-- **RN-133** La analítica de uso permanece desactivada hasta que el usuario la consienta. [PROP] (deriva de DEC-11)
+- **RN-133** La analítica de uso permanece desactivada hasta que el usuario la consienta. [PROP] DEC-65 (deriva de DEC-11)
 
 **Onboarding**
 
@@ -344,7 +357,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 \* La clasificación definitiva de qué datos son "de salud" requiere validación legal (DEC-42). La tabla muestra la propuesta inicial.
 
-### 6.2 Módulo 2 — Inicio [E6.1, ampliado en cada entrega]
+### 6.2 Módulo 2 — Inicio [ET6.1, ampliado en cada entrega]
 
 **Contenido de H01:**
 
@@ -356,29 +369,29 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 **Reglas**
 
 - **RN-13** Solo aparecen los accesos y tarjetas de los módulos activos **y ya disponibles** en la entrega actual. [PROP]
-- **RN-14** El acceso a Comunidad no aparece antes de E9. La pestaña "Amigos" antes de E9: DEC-46. [PEND]
+- **RN-14** El acceso a Comunidad no aparece antes de ET9. La pestaña "Amigos" antes de ET9: DEC-46. [PEND]
 - **RN-15** (modificada) Las recomendaciones del MVP se generan con reglas explicables ("¿por qué veo esto?"). Nunca recomiendan entrenar más tras varios días seguidos de actividad intensa; en su lugar sugieren descanso (aparece en H01 y en el resumen de sesión E09). [APR] no fomentar exceso · [PROP] mecanismo
 - **RN-16** Estados vacíos útiles: cada tarjeta explica cómo empezar. [PROP]
 - **RN-17** (modificada) El saludo por defecto es exactamente el texto aprobado. Una variante de género neutro ("Te damos la bienvenida, [nombre]") queda **como propuesta** pendiente de tu aprobación. [APR] texto · [PROP] variante
-- **RN-136** Durante el MVP, el inicio se adapta automáticamente a los módulos activos; la organización manual de tarjetas llega en E10 (H03). Activar o desactivar módulos se hace desde el perfil. [PROP] (resuelve X-06)
+- **RN-136** Durante el MVP, el inicio se adapta automáticamente a los módulos activos; la organización manual de tarjetas llega en ET10 (H03). Activar o desactivar módulos se hace desde el perfil. [PROP] (resuelve X-06)
 
 **Navegación inferior** [APR] propuesta original: Inicio · Actividad · Amigos · Perfil. Aparición por entrega en el mapa (§4.2).
 
-### 6.3 Módulo 3 — Nutrición [E6.3]
+### 6.3 Módulo 3 — Nutrición [ET6.3]
 
 | Función | Etapa |
 |---|---|
-| Resumen nutricional del día | E6.3 |
-| Registro de alimentos (recientes, favoritos, mis alimentos) | E6.3 |
-| Base de alimentos **acotada** con fuente visible | E6.3 (DEC-05) |
-| Detalle de alimento con información y fuente | E6.3 |
-| Alternativas de alimentos (N09) | E6.3 |
-| Alimento propio, marcado "no verificado" | E6.3 (menores: DEC-36) |
-| Hábitos (agua, frutas y verduras, horarios) | E6.3 (acceso sin nutrición: DEC-54) |
-| Historial | E6.3 |
-| Recetas básicas | E6.3 (cantidad inicial: DEC-63) |
+| Resumen nutricional del día | ET6.3 |
+| Registro de alimentos (recientes, favoritos, mis alimentos) | ET6.3 |
+| Base de alimentos **acotada** con fuente visible | ET6.3 (DEC-05) |
+| Detalle de alimento con información y fuente | ET6.3 |
+| Alternativas de alimentos (N09) | ET6.3 |
+| Alimento propio, marcado "no verificado" | ET6.3 (menores: DEC-36) |
+| Hábitos (agua, frutas y verduras, horarios) | ET6.3 (acceso sin nutrición: DEC-54) |
+| Historial | ET6.3 |
+| Recetas básicas | ET6.3 (cantidad inicial: DEC-63) |
 | **Biblioteca amplia de recetas** | **POST** |
-| Recomendaciones personalizadas | Reglas en E6.3; IA en E8 |
+| Recomendaciones personalizadas | Reglas en ET6.3; IA en ET8 |
 | Código de barras, foto de platillos | POST |
 
 **Reglas**
@@ -395,16 +408,16 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 - **RN-26** Aviso visible: "Información educativa. No sustituye a profesionales de salud." [APR]
 - **RN-27** **Suspendida → DEC-36.** Qué funciones nutricionales ven los menores está pendiente. Principio vigente: sin objetivos calóricos restrictivos para menores (DEC-13). [APR] principio · [PEND] detalle
 
-### 6.4 Módulo 4 — Entrenamiento [E6.2]
+### 6.4 Módulo 4 — Entrenamiento [ET6.2]
 
 **Disciplinas**
 
 | Disciplina | Métricas propias | Etapa |
 |---|---|---|
-| Registro genérico (cualquier actividad) | Tipo, duración, esfuerzo percibido, notas | E6.2 [APR] (ninguna actividad queda fuera) |
-| Gimnasio | Series, repeticiones, peso, descanso, esfuerzo; volumen y marcas | E6.2 — propuesta (DEC-47) |
-| Running | Distancia, tiempo, ritmo, desnivel manual, esfuerzo | E6.2 — propuesta (DEC-47) |
-| Entrenamiento en casa | Repeticiones o tiempo, circuitos, rondas | E6.2 — propuesta (DEC-47) |
+| Registro genérico (cualquier actividad) | Tipo, duración, esfuerzo percibido, notas | ET6.2 [APR] (ninguna actividad queda fuera) |
+| Gimnasio | Series, repeticiones, peso, descanso, esfuerzo; volumen y marcas | ET6.2 — propuesta (DEC-47) |
+| Running | Distancia, tiempo, ritmo, desnivel manual, esfuerzo | ET6.2 — propuesta (DEC-47) |
+| Entrenamiento en casa | Repeticiones o tiempo, circuitos, rondas | ET6.2 — propuesta (DEC-47) |
 | Calistenia | Progresiones, repeticiones, isométricos | POST |
 | Ciclismo | Distancia, tiempo, velocidad, desnivel | POST |
 | Natación | Distancia, largos, estilo, tiempo | POST |
@@ -414,15 +427,15 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 | Función | Etapa |
 |---|---|
-| Centro de entrenamiento, biblioteca y detalle de ejercicios | E6.2 |
-| Rutinas propias y sugeridas | E6.2 |
-| Sesión en curso con temporizador de descanso | E6.2 |
-| Registro manual de actividad realizada | E6.2 |
-| Resumen de sesión | E6.2 |
-| Calendario, planificación e historial | E6.2 |
-| Programas básicos | E6.2 (cantidad: DEC-63) |
+| Centro de entrenamiento, biblioteca y detalle de ejercicios | ET6.2 |
+| Rutinas propias y sugeridas | ET6.2 |
+| Sesión en curso con temporizador de descanso | ET6.2 |
+| Registro manual de actividad realizada | ET6.2 |
+| Resumen de sesión | ET6.2 |
+| Calendario, planificación e historial | ET6.2 |
+| Programas básicos | ET6.2 (cantidad: DEC-63) |
 | **Programas extensos** | **POST** |
-| Programas avanzados y especializados | E10 |
+| Programas avanzados y especializados | ET10 |
 | GPS en vivo | POST |
 
 **Reglas**
@@ -434,22 +447,22 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 - **RN-32** Los días de descanso se pueden planificar y cuentan como parte del plan, no como fallos. [APR] DEC-16
 - **RN-33** Ante muchos días seguidos de alta intensidad o volúmenes inusuales, la app sugiere descanso y no felicita el exceso. Umbrales: validación profesional. [APR] principio · [VAL] umbrales
 - **RN-34** Si el usuario declaró consideraciones de seguridad (con consentimiento), los ejercicios relacionados muestran advertencia en el detalle, al añadirlos a una rutina y durante la sesión, y no se sugieren automáticamente. [PROP]
-- **RN-35** (modificada) La "modalidad principal" sirve en el MVP solo para personalizar; **no limita funciones** (DEC-01). El límite de una modalidad para el plan Gratis queda como propuesta para E10 (DEC-62). Si la modalidad elegida aún no tiene métricas propias, se usa el registro genérico con aviso (DEC-55). [APR] sin límites en MVP · [PROP] resto
+- **RN-35** (modificada) La "modalidad principal" sirve en el MVP solo para personalizar; **no limita funciones** (DEC-01). El límite de una modalidad para el plan Gratis queda como propuesta para ET10 (DEC-62). Si la modalidad elegida aún no tiene métricas propias, se usa el registro genérico con aviso (DEC-55). [APR] sin límites en MVP · [PROP] resto
 - **RN-36** **Suspendida → DEC-32 / DEC-33.** Restricciones de entrenamiento por edad pendientes de validación profesional y legal.
 
-### 6.5 Módulo 5 — Progreso y predicciones [E6.2]
+### 6.5 Módulo 5 — Progreso y predicciones [ET6.2]
 
 | Función | Etapa |
 |---|---|
-| Resumen por categoría: actividad, rendimiento, nutrición, bienestar, objetivos | E6.2 (nutrición desde E6.3) |
-| Crear, seguir, pausar, completar y archivar objetivos | E6.2 |
-| Registrar avances y mediciones | E6.2 |
-| Gráficos, historiales, tendencias | E6.2 |
-| Predicción de fecha con rango y calidad | E6.2 |
-| Explicación del método | E6.2 |
-| Comparación de periodos | E10 |
+| Resumen por categoría: actividad, rendimiento, nutrición, bienestar, objetivos | ET6.2 (nutrición desde ET6.3) |
+| Crear, seguir, pausar, completar y archivar objetivos | ET6.2 |
+| Registrar avances y mediciones | ET6.2 |
+| Gráficos, historiales, tendencias | ET6.2 |
+| Predicción de fecha con rango y calidad | ET6.2 |
+| Explicación del método | ET6.2 |
+| Comparación de periodos | ET10 |
 
-**Tipos de objetivo:** constancia, rendimiento, acumulación, bienestar, personal libre [APR]; medida corporal: solo adultos [APR] DEC-14, con salvaguardas (RN-22).
+**Tipos de objetivo:** constancia, rendimiento, acumulación, bienestar, personal libre [APR]; medida corporal: adultos [PROP], con salvaguardas (RN-22); menores: [PEND DEC-35]. Lo aprobado para menores es que no hay predicciones corporales (DEC-14) ni objetivos estéticos o restrictivos (DEC-13).
 
 **Reglas de predicción**
 
@@ -468,19 +481,19 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 
 | Opción | Etapa |
 |---|---|
-| Tema oscuro (identidad predeterminada: negra, moderna, tecnológica) | E6.1 [APR] |
-| Tamaño de texto y reducción de animaciones | E6.1 |
-| Color de acento básico | E6.1 |
+| Tema oscuro (identidad predeterminada: negra, moderna, tecnológica) | ET6.1 [APR] |
+| Tamaño de texto y reducción de animaciones | ET6.1 |
+| Color de acento básico | ET6.1 |
 | **Tema claro** | **POST** (DEC-03) |
-| Paletas, colores secundarios, estilos de tarjeta | E10 (posibles funciones Premium) |
-| Organización del inicio | E10 |
-| Avatar y accesorios | E7 |
+| Paletas, colores secundarios, estilos de tarjeta | ET10 (posibles funciones Premium) |
+| Organización del inicio | ET10 |
+| Avatar y accesorios | ET7 |
 
 - **RN-46** Toda combinación de colores ofrecida mantiene un contraste accesible. [APR] · Nivel concreto propuesto: WCAG AA [PROP]
 - **RN-47** Las opciones de accesibilidad nunca son Premium. [APR]
 - **RN-48** Los colores de módulo son la identidad por defecto. [APR]
 
-### 6.7 Módulo 7 — Gamificación [E7]
+### 6.7 Módulo 7 — Gamificación [ET7]
 
 XP, niveles, logros, insignias, retos, misiones, objetivos semanales, recompensas, inventario. [APR]
 
@@ -491,17 +504,17 @@ XP, niveles, logros, insignias, retos, misiones, objetivos semanales, recompensa
 - **RN-53** Nada de XP ni logros por comer menos, bajar de peso o métricas corporales. [PROP] (deriva de DEC-13)
 - **RN-54** Recompensas solo estéticas; sin cajas aleatorias de pago. [PROP]
 - **RN-55** El XP se calcula en el servidor. [APR] (autorización en servidor)
-- **RN-56** (modificada) Los eventos de actividad se registran desde E6.2 para no perder historial cuando llegue E7. [PROP]
+- **RN-56** (modificada) Los eventos de actividad se registran desde ET6.2 para no perder historial cuando llegue ET7. [PROP]
 - **RN-57** **Suspendida → DEC-32 / DEC-33.** Misiones específicas para menores.
 
-### 6.8 Módulo 8 — Avatar [E7]
+### 6.8 Módulo 8 — Avatar [ET7]
 
 - **RN-58** El avatar es simbólico; su cuerpo no cambia según el peso, las medidas ni el progreso. [APR]
 - **RN-59** Opciones inclusivas disponibles gratis. [PROP]
 - **RN-60** La progresión se expresa con accesorios y efectos, nunca con un cuerpo "mejor". [APR]
 - En el MVP: inicial o avatar simple por defecto. Foto de perfil: DEC-56 [PEND].
 
-### 6.9 Módulo 9 — Comunidad [E9]
+### 6.9 Módulo 9 — Comunidad [ET9]
 
 Perfiles, amigos, solicitudes, retos y logros compartidos, rankings opcionales, bloqueo, reportes y controles de privacidad. [APR]
 
@@ -516,7 +529,7 @@ Perfiles, amigos, solicitudes, retos y logros compartidos, rankings opcionales, 
 - **RN-69** Filtro de lenguaje ofensivo. [PROP] → DEC-40
 - **RN-70** **Suspendida → DEC-32, DEC-33, DEC-40.** Comunidad para menores.
 
-### 6.10 Módulo 10 — Asistente de IA [E8]
+### 6.10 Módulo 10 — Asistente de IA [ET8]
 
 Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece información nutricional del catálogo, resuelve dudas de la app, sugiere actividades generales y ayuda con objetivos. [APR]
 
@@ -528,17 +541,17 @@ Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece i
 - **RN-76** Cada respuesta se identifica como generada por IA; se puede valorar y reportar. [PROP]
 - **RN-77** Las conversaciones no se usan para entrenar modelos de terceros; se pueden borrar. [PROP][VAL técnica: condiciones del proveedor]
 - **RN-78** Las acciones que proponga requieren confirmación. [PROP]
-- **RN-79** Límite diario de mensajes según plan (en E8 sin plan: límite técnico de costo). [PROP]
+- **RN-79** Límite diario de mensajes según plan (en ET8 sin plan: límite técnico de costo). [PROP]
 - **RN-80** **Suspendida → DEC-41.** Disponibilidad de la IA para menores.
 
 ### 6.11 Módulo 11 — Integraciones
 
 | Integración | Etapa | Estado |
 |---|---|---|
-| Notificaciones | E6.1 (uso desde E6.2) | [APR] |
-| Apple Health / Health Connect | E10 | [APR] explorar · menores: DEC-37 [PEND] |
-| Wearables (vía las anteriores) | E10 | [PROP] |
-| Spotify | E10 | [APR] explorar, sin almacenar ni distribuir música |
+| Notificaciones | ET6.1 (uso desde ET6.2) | [APR] |
+| Apple Health / Health Connect | ET10 | [APR] explorar · menores: DEC-37 [PEND] |
+| Wearables (vía las anteriores) | ET10 | [PROP] |
+| Spotify | ET10 | [APR] explorar, sin almacenar ni distribuir música |
 
 - **RN-81** Antes de implementar cada integración se revisan su documentación y condiciones oficiales vigentes. [APR]
 - **RN-82** Los datos de salud importados no se usan para publicidad ni se comparten con terceros. [PROP]
@@ -546,7 +559,7 @@ Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece i
 - **RN-84** Las notificaciones no muestran datos sensibles en la pantalla de bloqueo ni usan lenguaje de culpa. [PROP] (deriva de DEC-16)
 - **RN-85** **Suspendida → DEC-32 / DEC-33.** (v0.1 proponía silencio nocturno para menores.)
 
-### 6.12 Perfil, privacidad y cuenta [E6.1]
+### 6.12 Perfil, privacidad y cuenta [ET6.1]
 
 - **RN-86** Exportación y eliminación de datos gratuitas para todos. [APR]
 - **RN-87** Eliminación con periodo de gracia (propuesta: 30 días) con pantalla de reactivación (A13). Se conserva solo lo que la ley obligue. [PROP][VAL]
@@ -557,9 +570,9 @@ Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece i
 
 ---
 
-## 7. Modelo de suscripción previsto (E10)
+## 7. Modelo de suscripción previsto (ET10)
 
-> **En el MVP no hay pagos ni restricciones comerciales** (DEC-01). La beta cerrada es gratuita y sin cobros ni suscripciones (DEC-68). Todo esta sección se implementa en E10; **no se implementan cobros ni suscripciones antes**.
+> **En el MVP no hay pagos ni restricciones comerciales** (DEC-01). La beta cerrada es gratuita y sin cobros ni suscripciones (DEC-68). Todo esta sección se implementa en ET10; **no se implementan cobros ni suscripciones antes**.
 
 ### 7.1 Planes [APR] DEC-19
 
@@ -570,7 +583,7 @@ Explica el progreso, ayuda a organizar actividades, explica ejercicios, ofrece i
 | Premium anual | $500 MXN/año | 1 |
 | Familiar mensual | $200 MXN/mes | Hasta 6, incluido el administrador |
 
-### 7.2 Distribución Gratis / Premium — propuesta para E10 [PROP]
+### 7.2 Distribución Gratis / Premium — propuesta para ET10 [PROP]
 
 | Área | Gratis | Premium / Familiar |
 |---|---|---|
@@ -637,9 +650,9 @@ Las cifras concretas son la decisión DEC-62.
 - **Beta:** se mantienen todas las obligaciones legales y de privacidad aplicables a personas adultas (aviso de privacidad, consentimientos, derechos ARCO, exportación y eliminación, seguridad). Que la beta sea gratuita y cerrada no las reduce. [APR] DEC-68
 - Aviso de privacidad por capas; aviso específico para tutores [PROP][VAL].
 - **Consentimientos separados y granulares** (RN-129 a RN-133, RN-139).
-- Sin publicidad de terceros en la primera versión y sin venta de datos personales [PROP] (RN-118).
-- Datos de menores: mínima cantidad posible y sin analítica más allá de métricas agregadas y anónimas [PROP] (RN-119) → validación en DEC-34.
-- Sin contenido de "antes y después" corporal ni lenguaje de cuerpo ideal para ninguna edad [APR] DEC-13 (RN-120).
+- **RN-118** Sin publicidad de terceros en la primera versión y sin venta de datos personales. [PROP]
+- **RN-119** Datos de menores: mínima cantidad posible y sin analítica más allá de métricas agregadas y anónimas. [PROP] → validación en DEC-34 (MEN)
+- **RN-120** Sin contenido de "antes y después" corporal ni lenguaje de cuerpo ideal para ninguna edad. [APR] DEC-13
 
 ### 8.3 Clasificación de datos (propuesta) [PROP][VAL] DEC-42
 
@@ -655,13 +668,61 @@ Las cifras concretas son la decisión DEC-62.
 | Datos importados | Apple Health, Health Connect | **Sí (propuesta)** | Expreso + permiso del sistema |
 | Uso de la app | Analítica | No | Opcional (RN-133) |
 
-**Riesgo importante:** si la validación legal concluye que la actividad física y la alimentación son datos de salud, la mayor parte de la app dependería de ese consentimiento. Esto cambiaría la experiencia de quien no lo otorga y debe resolverse antes de E6.1 (DEC-42).
+**Riesgo importante:** si la validación legal concluye que la actividad física y la alimentación son datos de salud, la mayor parte de la app dependería de ese consentimiento. Esto cambiaría la experiencia de quien no lo otorga y debe resolverse antes de ET6.1 (DEC-42).
 
 ### 8.4 Reglas por país [APR] DEC-06
 
 - México es el primer país. Los requisitos legales mexicanos **no se asumen universales**.
 - Edad mínima, edad de consentimiento, textos legales, recursos de ayuda y fuentes de alimentos se configuran por país (RN-124).
 - Cómo se determina el país del usuario: DEC-43 [PEND].
+
+### 8.5 Servicio de correo transaccional
+
+> **Estado:** la necesidad del servicio está documentada por instrucción del propietario. Los requisitos son **propuestas** [PROP] salvo que se indique otra cosa. **La selección del proveedor está pendiente (DEC-72).** No se fijan plazos, volúmenes ni límites: donde hacen falta, figuran como "valor por definir".
+
+**Mensajes que el servicio debe enviar**
+
+| Mensaje | Pantalla o regla | Etapa | Estado |
+|---|---|---|---|
+| Código de verificación de correo | A05 | ET6.1 | [PROP] |
+| Enlace de recuperación de contraseña | A07 → A08 | ET6.1 | [PROP] |
+| Aviso al correo anterior tras cambiar correo o contraseña | RN-88, U06 | ET6.1 | [PROP] |
+| Aviso de exportación de datos lista | U12 | ET6.1 | [PROP] |
+| Confirmación de la solicitud de eliminación de la cuenta | U13, A13 | ET6.1 | [PROP] |
+| Respuesta a solicitudes de derechos ARCO | U14, RN-90 | ET6.1 | [PROP][VAL] |
+| Invitación a la beta | A17 | ET6.1 | [PEND DEC-69]: depende de si las invitaciones se envían por correo |
+| Correos al tutor | T01, T03, T04 | MEN | Fuera de la beta |
+| Avisos de plan e invitaciones familiares | U17, U19 | ET10 | Fuera de la beta |
+
+**Requisitos**
+
+| ID | Requisito | Estado |
+|---|---|---|
+| CT-01 | Los mensajes de verificación y recuperación se entregan de forma fiable; el usuario puede pedir un reenvío (A05). Plazo objetivo de entrega: valor por definir | [PROP] |
+| CT-02 | El dominio remitente se autentica con los estándares habituales de correo (SPF, DKIM y DMARC) para reducir suplantación y envíos a spam | [PROP] |
+| CT-03 | Los correos **no incluyen datos de salud** ni datos de otras personas; solo el mínimo necesario (código o enlace) | [PROP] (deriva de DEC-11) |
+| CT-04 | Los enlaces y códigos son de un solo uso y caducan; duración: valor por definir | [PROP] |
+| CT-05 | Los mensajes de inicio de sesión y recuperación no revelan si un correo está registrado (RN-06) | [PROP] |
+| CT-06 | Textos en español, gestionados fuera del código para poder traducirse | [APR] DEC-06 · [PROP] detalle |
+| CT-07 | Las credenciales del proveedor se guardan como secretos, nunca en el código ni en el repositorio | [APR] (gestión segura de secretos) |
+| CT-08 | Límites de envío por persona y por dirección para evitar abuso; valores por definir | [PROP] |
+| CT-09 | Se registra qué se envió y cuándo, sin guardar el contenido del mensaje; conservación: valor por definir | [PROP][VAL] |
+| CT-10 | Se gestionan rebotes y errores de entrega, con reintento y aviso en la app cuando no se pueda entregar | [PROP] |
+| CT-11 | Los correos transaccionales no incluyen publicidad; cualquier comunicación comercial sería otra decisión con su propio consentimiento | [PROP][VAL] |
+| CT-12 | El proveedor actúa como encargado del tratamiento: contrato, ubicación de los datos y posibles transferencias internacionales deben validarse legalmente y figurar en el Aviso de privacidad (DEC-71) | [VAL] |
+| CT-13 | Mensajes legibles y accesibles, con versión de texto plano | [PROP] |
+
+**Criterios para elegir el proveedor (DEC-72)** [PROP]: cumplimiento de CT-01 a CT-13, soporte de dominio propio y autenticación, entregabilidad en México, condiciones de tratamiento de datos, ubicación de los servidores, costo y facilidad de integración. La elección se hace en ET4.
+
+### 8.6 Documentos legales previos a la beta
+
+- **RN-144** **No se invita a usuarios reales a la beta** hasta que los documentos legales estén redactados, validados por un profesional competente y publicados en A12. [APR] DEC-70
+- Documentos necesarios, sujetos a lo que indique la validación (DEC-71) [VAL]:
+  - Términos y condiciones.
+  - Términos de la beta, que incluyen que la gratuidad no es permanente (RN-141).
+  - Aviso de privacidad para personas adultas, con los consentimientos separados (DEC-08), las categorías de datos (DEC-42) y los encargados del tratamiento (por ejemplo, el proveedor de correo, CT-12).
+  - Procedimiento para ejercer los derechos ARCO (RN-90).
+- El aviso para tutores es parte de la habilitación futura de menores (MEN).
 
 ---
 
@@ -732,7 +793,7 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 #### DEC-37 · Apple Health y Health Connect para menores [VAL legal y políticas de las tiendas]
 
 - **Alternativas:** (a) no disponible para menores; (b) disponible con autorización del tutor; (c) solo lectura de datos básicos (pasos).
-- **Nota:** las integraciones son E10; la decisión puede esperar, pero debe estar tomada antes de E10.
+- **Nota:** las integraciones son ET10; la decisión puede esperar, pero debe estar tomada antes de ET10.
 
 #### DEC-38 · Menores en planes familiares
 
@@ -749,7 +810,7 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 
 - **Alternativas para la interacción:** (a) solo reacciones y mensajes predefinidos (v0.1); (b) chat libre solo entre adultos; (c) chat con moderación automática.
 - **Necesidades:** herramienta interna de moderación, plazos de respuesta, filtros, procedimiento ante contenido que involucre a menores.
-- **Nota:** E9; debe resolverse antes de E9.
+- **Nota:** ET9; debe resolverse antes de ET9.
 
 #### DEC-41 · Asistente de IA para menores [VAL legal y técnica]
 
@@ -807,48 +868,111 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 
 ## 11. Indicadores de éxito (propuesta) [PROP]
 
-Onboarding completado, activación en 48 h, retención a 4 semanas, semanas con objetivo cumplido, porcentaje de usuarios con predicción disponible, tiempo de respuesta a reportes (E9) y conversión a Premium (E10). No se optimiza el tiempo en la app.
+Onboarding completado, activación en 48 h, retención a 4 semanas, semanas con objetivo cumplido, porcentaje de usuarios con predicción disponible, tiempo de respuesta a reportes (ET9) y conversión a Premium (ET10). No se optimiza el tiempo en la app.
 
 ---
 
 ## 12. Decisiones pendientes (resumen)
 
-El detalle completo, con estado, justificación y consecuencias, está en el [registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md).
+El detalle completo, con estado, justificación y consecuencias, está en el [registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md). **Esta sección se genera desde la tabla única de bloqueos del registro (sección 6, AF-17).**
 
-### 12.1 Bloquean el inicio de E6.1 (beta solo para adultos)
+### 12.1 Bloquean: ET4 (arquitectura técnica)
 
 | Decisión | Tema |
 |---|---|
-| DEC-42 | Qué datos son "de salud" y granularidad de los consentimientos [VAL] |
+| DEC-66 | Comportamiento en tablets [VAL] |
+| DEC-72 | Proveedor de correo transaccional |
+
+### 12.2 Bloquean: ET6.1 (acceso, registro, onboarding, inicio y perfil)
+
+| Decisión | Tema |
+|---|---|
+| DEC-42 | Qué datos son de salud y granularidad de consentimientos [VAL] |
 | DEC-43 | Cómo se determina el país del usuario |
-| DEC-60 | Valores propuestos (plazos, umbrales) que usa E6.1; el plazo de 14 días del tutor ya no aplica a la beta |
+| DEC-54 | Bienestar y hábitos en el onboarding |
+| DEC-55 | Modalidad principal sin métricas propias |
+| DEC-56 | Foto de perfil |
+| DEC-60 | Valores numéricos propuestos |
+| DEC-65 | Analítica desactivada hasta su consentimiento |
 | DEC-69 | Mecanismo de invitaciones a la beta |
 
-**Dejan de bloquear la beta (DEC-44):** DEC-30, DEC-31, DEC-45 y DEC-64 pasan a §12.5.
+### 12.3 Bloquean: Invitar a usuarios reales a la beta
 
-**Notas que no cambian ninguna decisión:**
-- Pantallas de E6.1 también dependen de DEC-54 (O03), DEC-55 (O04), DEC-65 (A14) y DEC-56 (U01, con valor provisional). Incluirlas formalmente en esta lista es la corrección AF-17, pendiente de tu autorización.
-- Antes de invitar a personas reales hacen falta los Términos (incluidos los de la beta, con RN-141) y el Aviso de privacidad validados legalmente (AF-18, sin decisión registrada todavía).
+| Decisión | Tema |
+|---|---|
+| DEC-71 | Redacción y validación de los documentos legales de la beta [VAL] |
 
-### 12.2 Bloquean E6.2
+### 12.4 Bloquean: ET6.2 (entrenamiento y progreso)
 
-DEC-47 (disciplinas), DEC-55 (modalidad sin métricas), DEC-57 (licencias de ejercicios), DEC-63 (cantidad de programas).
+| Decisión | Tema |
+|---|---|
+| DEC-47 | Disciplinas con métricas propias |
+| DEC-57 | Fuentes y licencias de contenido [VAL] |
+| DEC-63 | Cantidad inicial de recetas y programas |
 
-### 12.3 Bloquean E6.3
+### 12.5 Bloquean: ET6.3 (nutrición)
 
-DEC-05 ya aprobada; pendientes: DEC-57 (fuentes de alimentos y recetas), DEC-50 (límites nutricionales) [VAL], DEC-54 (bienestar y hábitos), DEC-61 (señales de riesgo) [VAL].
+| Decisión | Tema |
+|---|---|
+| DEC-50 | Límites de seguridad nutricional [VAL] |
+| DEC-61 | Criterios de señales de riesgo [VAL] |
 
-### 12.4 Antes de activar planes comerciales (E10)
+### 12.6 Bloquean: Cierre del MVP
 
-DEC-67 (política de transición de la beta gratuita), DEC-48, DEC-49, DEC-51, DEC-52, DEC-58, DEC-62.
+| Decisión | Tema |
+|---|---|
+| DEC-46 | Pestaña Amigos antes de la comunidad |
 
-### 12.5 Habilitación futura de menores (MEN)
+### 12.7 Bloquean: ET9 (comunidad)
 
-DEC-18 (edad mínima de 13) [VAL], DEC-30, DEC-31, DEC-32, DEC-33, DEC-34, DEC-35, DEC-36, DEC-37, DEC-38, DEC-39, DEC-41, DEC-45, DEC-64.
+| Decisión | Tema |
+|---|---|
+| DEC-40 | Moderación y seguridad de la comunidad |
 
-### 12.6 Pueden esperar a su etapa
+### 12.8 Bloquean: ET10 (planes comerciales e integraciones)
 
-DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones pospuestas), DEC-66 (tablets, en E4), DEC-40 (comunidad, antes de E9), DEC-53 (marca, antes de publicar en tiendas), DEC-65 (analítica; ver nota de §12.1).
+| Decisión | Tema |
+|---|---|
+| DEC-48 | Predicciones gratis o Premium |
+| DEC-49 | Espera entre grupos familiares |
+| DEC-51 | Plan Familiar anual |
+| DEC-52 | Prueba gratuita |
+| DEC-58 | Comparación de escenarios |
+| DEC-62 | Límites del plan Gratis |
+| DEC-67 | Transición de la beta gratuita a planes comerciales |
+
+### 12.9 Bloquean: Publicación en tiendas
+
+| Decisión | Tema |
+|---|---|
+| DEC-53 | Validación del nombre como marca [VAL] |
+
+### 12.10 Bloquean: Planificación posterior al MVP
+
+| Decisión | Tema |
+|---|---|
+| DEC-59 | Etapa de las funciones pospuestas |
+
+### 12.11 Bloquean: MEN (habilitación futura de menores)
+
+| Decisión | Tema |
+|---|---|
+| DEC-18 | Edad mínima de 13 años [VAL] |
+| DEC-30 | Consentimiento parental [VAL] |
+| DEC-31 | Verificación de edad y autorización del tutor [VAL] |
+| DEC-32 | Experiencia 13–15 [VAL] |
+| DEC-33 | Experiencia 16–17 [VAL] |
+| DEC-34 | Datos de salud de menores [VAL] |
+| DEC-35 | Peso, medidas y objetivos corporales en menores [VAL] |
+| DEC-36 | Nutrición para menores [VAL] |
+| DEC-37 | Apple Health / Health Connect para menores [VAL] |
+| DEC-38 | Menores en planes familiares |
+| DEC-39 | Acceso del tutor a la información del menor [VAL] |
+| DEC-41 | IA para menores [VAL] |
+| DEC-45 | Fases de la experiencia del tutor |
+| DEC-64 | Desactivado mientras esté pendiente (menores) |
+
+**Nota:** DEC-30, DEC-31, DEC-45 y DEC-64 no bloquean la beta (DEC-44).
 
 ---
 
@@ -863,6 +987,8 @@ DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones po
 - **POST:** función conservada en la visión, pero programada después del MVP.
 - **Beta cerrada:** primera salida del MVP a un grupo de personas adultas invitadas, gratuita y sin cobros (DEC-68).
 - **MEN:** funciones para menores y tutores conservadas para una habilitación futura; fuera de la beta y del MVP (DEC-44).
+- **Correo transaccional:** mensajes automáticos ligados a la cuenta (verificación, recuperación, avisos), distintos de los mensajes comerciales.
+- **ET:** prefijo de las etapas desde la v0.2.2 (por ejemplo, ET6.1), para no confundirlas con las pantallas E01–E11.
 
 ---
 
@@ -897,12 +1023,13 @@ DEC-46 (pestaña Amigos), DEC-56 (foto de perfil), DEC-59 (etapa de funciones po
 | RN-109, RN-110 | Conservadas |
 | RN-111, RN-112 | Suspendidas → DEC-30, DEC-31 |
 | RN-113 | Conservada [VAL] |
-| RN-114 | Sustituida por los flujos de cambio de tramo del mapa (F11, F12); contenido pendiente de DEC-32/33/39 |
+| RN-114 | Sustituida por los flujos de cambio de tramo del mapa (F16, F17); contenido pendiente de DEC-32/33/39 |
 | RN-115, RN-116 | Suspendidas → DEC-39 |
 | RN-117 | Modificada (fases del tutor) |
-| RN-118 a RN-120 | Conservadas (§8.2) |
+| RN-118 a RN-120 | Conservadas (§8.2); con formato de regla desde v0.2.2 |
 | RN-121 | Conservada (§4.1) |
 | RN-122 a RN-140 | Nuevas en v0.2 (RN-140 modificada en v0.2.1) |
 | RN-141 a RN-143 | Nuevas en v0.2.1 (beta) |
+| RN-144 | Nueva en v0.2.2 (documentos legales previos a invitar) |
 
 La matriz de experiencias por edad de la v0.1 (§6.4) **no se elimina**: queda como fuente de las alternativas de DEC-32 a DEC-41.
