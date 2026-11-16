@@ -1,12 +1,12 @@
-# Definite Fitnes — PRD v0.2 (PROPUESTA)
+# Definitely Fitness — PRD v0.2 (PROPUESTA)
 
 | | |
 |---|---|
-| **Versión** | 0.2.3 — propuesta |
+| **Versión** | 0.2.4 — propuesta |
 | **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc). |
+| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc; v0.2.3: 4c058aa). |
 | **Documentos relacionados** | [05 — Mapa de navegación v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad de la auditoría](07-TRAZABILIDAD-AUDITORIA-v0.2.md) · [03 — Auditoría cruzada](03-AUDITORIA-CRUZADA.md) |
-| **Nombre** | "Definite Fitnes" es **provisional**: su validación como marca está pendiente (DEC-10, DEC-53). |
+| **Nombre** | **"Definitely Fitness"** es el nombre comercial aprobado (DEC-78), sujeto a validación legal y de marca (DEC-53, pendiente). Sustituye a "Definite Fitnes" (DEC-10, sustituida). |
 
 ---
 
@@ -90,11 +90,19 @@ Aprobados expresamente por el propietario. La línea base v0.2.2 (commit 562f7fc
 3. **CT-09 precisado** (propuesta) y **CT-14 aprobado:** sin rastreo de aperturas ni clics en ningún correo transaccional, lo envíe quien lo envíe.
 4. **DEC-73 a DEC-77 (pendientes):** aplicación móvil, backend, base de datos y almacenamiento, autenticación, e infraestructura y alojamiento. Registrarlas no elige ninguna tecnología.
 
+### 0.8 Cambios en la v0.2.4
+
+Aprobados expresamente por el propietario. La v0.2.3 se cerró tal como fue auditada; las versiones anteriores no se modifican.
+
+1. **DEC-78:** el nombre comercial de la empresa y de la aplicación es **"Definitely Fitness"** (grafía oficial), sujeto a validación legal y de marca (DEC-53, pendiente).
+2. **DEC-10** ("Definite Fitnes") pasa al nuevo estado **Sustituida**: se conserva como registro histórico.
+3. Se actualizan todas las referencias vigentes al nombre. Los documentos históricos 01–03 y el historial de Git no se modifican.
+
 ---
 
 ## 1. Descripción del producto
 
-**Definite Fitnes** es una plataforma fitness integral para iOS y Android que reúne entrenamiento multidisciplinario, nutrición, bienestar, seguimiento de progreso con predicciones transparentes, gamificación, avatar, personalización visual, comunidad privada y un asistente de IA, todo alrededor de un perfil central que adapta la experiencia a cada persona. [APR]
+**Definitely Fitness** es una plataforma fitness integral para iOS y Android que reúne entrenamiento multidisciplinario, nutrición, bienestar, seguimiento de progreso con predicciones transparentes, gamificación, avatar, personalización visual, comunidad privada y un asistente de IA, todo alrededor de un perfil central que adapta la experiencia a cada persona. [APR]
 
 - **Lemas:** "Fitness, a tu manera." · "Tu vida. Tus objetivos. Tu progreso." [APR]
 - **Plataformas:** iOS y Android, prioridad móvil. Optimización específica para tablets: **POST** (DEC-03). [APR]
@@ -169,7 +177,7 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 | **Tutor** | Adulto que autoriza la cuenta de un menor. Sus funciones exactas están pendientes (DEC-30, DEC-31, DEC-39). **No existe en la beta ni en el MVP** (DEC-44); habilitación futura (MEN). | [APR] rol · [PEND] alcance |
 | **Administrador familiar** | Adulto que paga el plan Familiar. Gestiona integrantes y suscripción; **no tiene acceso automático a datos personales** de los integrantes. | [APR] DEC-15 |
 | **Integrante familiar** | Usuario dentro de un plan Familiar con cuenta, perfil, progreso y datos propios. | [APR] |
-| **Soporte y moderación** | Personal de Definite Fitnes con acceso mínimo y registrado. Herramientas por definir (DEC-40). | [PROP] |
+| **Soporte y moderación** | Personal de Definitely Fitness con acceso mínimo y registrado. Herramientas por definir (DEC-40). | [PROP] |
 
 - **RN-122** Tutor y administrador familiar son roles independientes: uno no implica el otro. [PROP]
 
@@ -720,7 +728,7 @@ Las cifras concretas son la decisión DEC-62.
 | CT-11 | Los correos transaccionales no incluyen publicidad; cualquier comunicación comercial sería otra decisión con su propio consentimiento | [PROP][VAL] |
 | CT-12 | El proveedor actúa como encargado del tratamiento: contrato, ubicación de los datos y posibles transferencias internacionales deben validarse legalmente y figurar en el Aviso de privacidad (DEC-71) | [VAL] |
 | CT-13 | Mensajes legibles y accesibles, con versión de texto plano | [PROP] |
-| CT-14 | Los correos transaccionales no incluirán píxeles de seguimiento de aperturas ni mecanismos de redirección para rastrear clics. **Se aplica a todos los correos transaccionales de Definite Fitnes, independientemente del servicio que los envíe**, incluido un servicio de autenticación con envío propio | [APR] (v0.2.3) |
+| CT-14 | Los correos transaccionales no incluirán píxeles de seguimiento de aperturas ni mecanismos de redirección para rastrear clics. **Se aplica a todos los correos transaccionales de Definitely Fitness, independientemente del servicio que los envíe**, incluido un servicio de autenticación con envío propio | [APR] (v0.2.3) |
 
 **Criterios para elegir el proveedor (DEC-72)** [PROP]: cumplimiento de CT-01 a CT-14; **API como método preferido y SMTP como alternativa** (no se exigen ambos); soporte de dominio propio y autenticación; entregabilidad en México; condiciones de tratamiento de datos; ubicación de los servidores; costo y facilidad de integración. Candidatos sin seleccionar: Amazon SES, Postmark, Resend, SendGrid y Mailgun. La selección se hace **después de definir el backend (DEC-74) y la autenticación (DEC-76)**. Si la autenticación usa su propio envío de correos, su cumplimiento de estos requisitos (en particular CT-14) se evalúa por separado.
 

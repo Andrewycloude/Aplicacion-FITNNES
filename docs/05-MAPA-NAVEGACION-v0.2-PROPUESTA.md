@@ -1,15 +1,20 @@
-# Definite Fitnes — Mapa de navegación v0.2 (PROPUESTA)
+# Definitely Fitness — Mapa de navegación v0.2 (PROPUESTA)
 
 | | |
 |---|---|
-| **Versión** | 0.2.3 — propuesta |
+| **Versión** | 0.2.4 — propuesta |
 | **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc). |
+| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc; v0.2.3: 4c058aa). |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad](07-TRAZABILIDAD-AUDITORIA-v0.2.md) |
 
 ---
 
 ## 0. Historial de cambios
+
+### v0.2.4
+
+1. Nombre comercial **"Definitely Fitness"** (DEC-78) en el título, la raíz del árbol de módulos (§2) y el texto propuesto de A11.
+2. Sin cambios en el inventario, los flujos ni los conteos.
 
 ### v0.2.3
 
@@ -92,7 +97,7 @@ Los nodos de decisión de los diagramas (rombos) no son pantallas y no llevan pr
 ## 2. Módulos y submódulos
 
 ```
-Definite Fitnes
+Definitely Fitness
 ├── Acceso y cuenta (A)
 │   ├── Bienvenida, verificación de edad, registro, inicio de sesión, recuperación
 │   ├── Consentimientos de datos (A14)
@@ -369,7 +374,7 @@ A06 aplica la misma tabla tras un inicio de sesión correcto.
 | **A08** | Nueva contraseña ×2 · **Guardar** → A06; cierra las demás sesiones | Enlace caducado → A07 |
 | **A09** ◆ MEN | Explicación para el menor · Correo del tutor · **Enviar solicitud** → A10 · Contenido legal: [PEND DEC-30] | Correo inválido · Mismo correo que el del menor |
 | **A10** ◆ MEN | **Pendiente:** fecha de caducidad visible (RN-04) · **Reenviar** · **Cambiar correo del tutor** → A09 · **Cancelar solicitud y eliminar mis datos** (M03) · **Cerrar sesión**. **Rechazado:** explicación neutra; los datos se eliminan; **Cerrar**. **Caducado:** explicación; **Volver a solicitar** → A09 o **Cerrar** | Tres estados descritos |
-| **A11** | Mensaje amable; durante la beta: "Por ahora, la beta de Definite Fitnes es solo para personas mayores de 18 años" (RN-142, texto propuesto); sin formulario ni recogida de datos; no sugiere cambiar la fecha · **Cerrar**. Si el dispositivo recuerda el bloqueo, A03 no permite reintentar [PEND E-12] | — |
+| **A11** | Mensaje amable; durante la beta: "Por ahora, la beta de Definitely Fitness es solo para personas mayores de 18 años" (RN-142, texto propuesto); sin formulario ni recogida de datos; no sugiere cambiar la fecha · **Cerrar**. Si el dispositivo recuerda el bloqueo, A03 no permite reintentar [PEND E-12] | — |
 | **A12** | Términos · **Términos de la beta** β (con RN-141) · Aviso de privacidad · Aviso para tutores ◆ MEN · versión y fecha de cada documento | — |
 | **A13** | "Tu cuenta se eliminará el [fecha]" · **Reactivar mi cuenta** → tabla 4.3 · **Mantener la eliminación** → cierra sesión | — |
 | **A14** | Explicación por capas · Interruptores por categoría (propuesta según DEC-42): **Datos de salud** (alergias, consideraciones de seguridad, medidas) con la lista de funciones que dependen de ellos · **Analítica de uso** (desactivada por defecto, RN-133; DEC-65 pendiente) · Enlaces a A12 · **Continuar** → O01 (con cualquier combinación, incluida "ninguno") · Menores ◆ MEN: categorías según DEC-34 | — |

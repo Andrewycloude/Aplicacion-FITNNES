@@ -1,8 +1,8 @@
-# Definite Fitnes — Trazabilidad de la auditoría hacia la v0.2
+# Definitely Fitness — Trazabilidad de la auditoría hacia la v0.2
 
 | | |
 |---|---|
-| **Versión** | 0.2.3 — propuesta (no definitiva) |
+| **Versión** | 0.2.4 — propuesta (no definitiva) |
 | **Auditoría de origen** | [03-AUDITORIA-CRUZADA.md](03-AUDITORIA-CRUZADA.md) (59 hallazgos: 14 altos, 32 medios, 13 bajos) |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [05 — Mapa v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) |
 
@@ -213,3 +213,16 @@ Cambios aprobados expresamente por el propietario. No resuelven ni reabren halla
 | Conservación de mensajes precisada | CT-09 [PROP] | PRD §8.5 | Sin cifras: valor por definir |
 | Sin rastreo de aperturas ni clics en todos los correos transaccionales | CT-14 [APR] | PRD §8.5 | Se aplica también al envío propio de la autenticación |
 | Separación de las decisiones tecnológicas | DEC-73 a DEC-77 → Pendientes | PRD §4, §12 · registro §3, §6 | Ninguna tecnología seleccionada |
+
+---
+
+## 10. Cambios de la v0.2.4
+
+Cambio aprobado expresamente por el propietario. No resuelve ni reabre hallazgos de auditorías anteriores.
+
+| Cambio | Decisión | Documentos | Verificación |
+|---|---|---|---|
+| Nombre comercial "Definitely Fitness" | DEC-78 → Aprobada (sujeta a DEC-53) | PRD, mapa, registro, trazabilidad, README | 11 referencias vigentes sustituidas; documentos históricos 01–03 sin cambios |
+| Nombre anterior "Definite Fitnes" | DEC-10 → Sustituida | Registro §7 | Conservada como registro histórico, vinculada a DEC-78 |
+| Nuevo estado "Sustituida" | — | Registro (estados y resumen) | Conteos: 25 aprobadas, 17 requieren validación, 28 pendientes, 1 sustituida = 71 |
+| Validación de marca | DEC-53 → Requiere validación (sin cambio de estado) | Registro | Ahora referida a "Definitely Fitness" |
