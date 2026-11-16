@@ -83,7 +83,7 @@ Abreviaturas: **PRD** = 04-PRD-v0.2 · **MAPA** = 05-MAPA-v0.2.
 | **R-08** Modalidad principal en Gratis | Media | En el MVP no limita funciones; el caso sin métricas propias pasa a DEC-55 | PRD RN-35 · MAPA O04 | DEC-01, DEC-55 | Parcial | Sí |
 | **R-09** Herramienta de moderación | Media | Documentada como necesidad de ET9 | PRD §3.3, §6.9 | DEC-40 | Abierto | Sí, antes de ET9 |
 | **R-10** Derechos ARCO incompletos | Media | Acceso desde U05, U18 y U14 con flujo F10 | PRD RN-90 · MAPA U14, U18, F10 | — | Requiere validación | Sí: procedimiento legal |
-| **R-11** Ofertas de compra a menores | Media | En el MVP no hay compras (DEC-01); en ET10 depende de DEC-38/44 | PRD RN-97 · MAPA U09 | DEC-01, DEC-38, DEC-44 · DEC-44 (fuera de la beta) | Diferido (MEN) | Sí, antes de habilitar menores |
+| **R-11** Ofertas de compra a menores | Media | En el MVP no hay compras (DEC-01); en ET10, para menores: no aplica en la beta (DEC-44); futuro: DEC-38 | PRD RN-97 · MAPA U09 | DEC-01, DEC-38, DEC-44 · DEC-44 (fuera de la beta) | Diferido (MEN) | Sí, antes de habilitar menores |
 | **R-12** Espera y aviso de doble pago en U10 | Media | U10 muestra la espera; U17 muestra el aviso de doble pago | MAPA U10, U17 | DEC-49 | Parcial | Sí, en ET10 |
 | **R-13** Eventos de XP desde ET6 | Baja | Registro de eventos desde ET6.2 como servicio transversal | PRD §4.2, RN-56 | — | Resuelto (propuesta) | Sí, en ET5 (modelo de datos) |
 | **R-14** Indicador de IA por mensaje | Baja | Cada respuesta se identifica como IA | PRD RN-76 · MAPA I01 | — | Resuelto (propuesta) | No |
@@ -187,3 +187,16 @@ La auditoría final se entregó como informe en la conversación del 16 de novie
 | Abierto | 1 | 2 | 2 | **5** |
 | Diferido (MEN) | 1 | 1 | 1 | **3** |
 | **Total** | **7** | **10** | **11** | **28** |
+
+---
+
+## 8. Auditoría cruzada de la v0.2.2 (AC)
+
+Hallazgos de la auditoría cruzada realizada tras la v0.2.2. Por autorización del propietario solo se corrigieron AC-01 y AC-02.
+
+| Hallazgo | Sev. | Problema | Estado | Nota |
+|---|---|---|---|---|
+| **AC-01** | Media | Tres referencias presentaban DEC-44 como pendiente ("[PEND DEC-38/44]") | Resuelto | Mapa U09 (inventario y detalle) y trazabilidad R-11 dicen ahora "no aplica en la beta (DEC-44); futuro: DEC-38". R-11 sigue "Diferido (MEN)" |
+| **AC-02** | Baja | El perfil "Madre, padre o tutor" no indicaba que es habilitación futura | Resuelto | PRD §3.2 lo marca como MEN, fuera de la beta |
+| **AC-03** | Baja | Las notas de cambios de la v0.2.1 muestran la notación ET | Aceptado sin cambios | Diferencia histórica aceptada por el propietario |
+

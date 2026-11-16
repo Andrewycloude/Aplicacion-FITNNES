@@ -217,7 +217,7 @@ Definite Fitnes
 | U06 | Seguridad de la cuenta | ET6.1 | | U03 |
 | U07 | Notificaciones | ET6.1 | | U03; H02 Ajustes |
 | U08 | Suscripción | ET10 | | U01 (plan actual); U03 |
-| U09 | Planes | ET10 | [PEND DEC-38/44] menores | U08; P03 (al alcanzar un límite, ET10) |
+| U09 | Planes | ET10 | Menores: no aplica en la beta (DEC-44); futuro: DEC-38 | U08; P03 (al alcanzar un límite, ET10) |
 | U10 | Grupo familiar | ET10 | | U08 |
 | U11 | Invitar integrante | ET10 | | U10 |
 | U12 | Exportar mis datos | ET6.1 | | U05; U13 |
@@ -511,7 +511,7 @@ Todo el módulo depende de DEC-40 (moderación y seguridad) y, para menores, de 
 | **U06** | Cambiar correo · cambiar contraseña (reautenticación) · sesiones abiertas: **Cerrar / Cerrar todas** | ET6.1 |
 | **U07** | Interruptores por tipo de notificación · horario de silencio (menores: [PEND DEC-32/33]) | ET6.1 |
 | **U08** | Plan actual · renovación · **Ver planes** → U09 · **Grupo familiar** → U10 · **Gestionar o cancelar** → tienda · **Restaurar compras** | ET10 |
-| **U09** | Comparativa de planes y condiciones · **Elegir** → tienda · menores: [PEND DEC-38/44] | ET10 |
+| **U09** | Comparativa de planes y condiciones · **Elegir** → tienda · menores: no aplica en la beta (DEC-44); futuro: DEC-38 | ET10 |
 | **U10** | Administrador: integrantes (nombre, estado, fecha; nada más), lugares libres, **Invitar** → U11, **Retirar** (M03), **Transferir administración**, aviso de espera entre grupos [PEND DEC-49] · Integrante: administrador, **Salir del grupo** (M03) · Sin grupo: **Tengo un código** → U17 | ET10 |
 | **U11** | Generar enlace o código de un solo uso · **Compartir** · pendientes: **Anular** | ET10 |
 | **U12** | Qué incluye · **Solicitar exportación** (reautenticación) · aviso cuando esté lista · **Descargar** | ET6.1 |

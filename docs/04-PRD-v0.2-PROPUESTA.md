@@ -150,7 +150,7 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 - Usuario de gimnasio con experiencia: registro rápido de series, historial y estadísticas.
 - Persona enfocada en hábitos: alimentación, hidratación, descanso y constancia.
 - Familia: varias personas con cuentas independientes bajo un mismo pago (ET10).
-- Madre, padre o tutor: autoriza y gestiona permisos de la cuenta de un menor (detalle pendiente).
+- Madre, padre o tutor **(MEN)**: autoriza y gestiona permisos de la cuenta de un menor (detalle pendiente). Pertenece a la habilitación futura de menores, **no a la beta** (DEC-44).
 
 ### 3.3 Roles
 
