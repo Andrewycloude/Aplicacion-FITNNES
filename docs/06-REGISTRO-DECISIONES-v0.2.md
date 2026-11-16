@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2.2 — propuesta |
+| **Versión** | 0.2.3 — propuesta |
 | **Estado** | Pendiente de aprobación del propietario. **No es definitiva.** |
-| **Historial** | v0.2 en Git (commit a5d6863); v0.2.1 (commit abb3921) incorporó DEC-44 y DEC-68; **v0.2.2** corrige hallazgos de la auditoría final (AF-01, 03, 05, 06, 13, 16, 17, 24, 25, 27, 28) y añade DEC-70 a DEC-72. |
+| **Historial** | v0.2 en Git (commit a5d6863); v0.2.1 (commit abb3921) incorporó DEC-44 y DEC-68; **v0.2.2** corrige hallazgos de la auditoría final (AF-01, 03, 05, 06, 13, 16, 17, 24, 25, 27, 28) y añade DEC-70 a DEC-72; **v0.2.3** registra DEC-66 (aprobada), redefine DEC-72 (pendiente) y añade DEC-73 a DEC-77 (pendientes). La línea base aprobada v0.2.2 es el commit 562f7fc. |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [05 — Mapa v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [07 — Trazabilidad](07-TRAZABILIDAD-AUDITORIA-v0.2.md) |
 
 ## Estados
@@ -21,13 +21,14 @@ Abreviaturas de documentos: **PRD** = 04-PRD-v0.2 · **MAPA** = 05-MAPA-v0.2.
 
 ## 1. Decisiones aprobadas
 
-### 1.0 Aprobadas en la v0.2.1 y la v0.2.2 (decisiones expresas del propietario)
+### 1.0 Aprobadas en la v0.2.1, la v0.2.2 y la v0.2.3 (decisiones expresas del propietario)
 
 | ID | Descripción | Estado | Justificación | Documentos afectados | Consecuencias sobre el producto |
 |---|---|---|---|---|---|
 | **DEC-44** | El MVP y su primera beta **no admiten menores de 18 años**. Es una decisión de alcance del lanzamiento inicial: **no elimina** el objetivo futuro de admitir usuarios desde los 13 años | Aprobada | Decisión expresa del propietario; sustituye la versión pendiente de la v0.2 | PRD §3.1, §3.3, §5, §6.1, §7.3, §9, §12 · MAPA A03, A11, marcador ◆ MEN, §3.4, F27 | Las pantallas y páginas web solo necesarias para menores y tutores salen del alcance de la beta y quedan documentadas como **MEN** (habilitación futura): 5 pantallas de la app y 4 páginas web. DEC-18, DEC-30 a DEC-39, DEC-41, DEC-45 y DEC-64 dejan de bloquear la beta y siguen pendientes para la habilitación futura |
 | **DEC-68** | Primera beta: **cerrada, gratuita, solo para mayores de 18 años, accesible mediante invitación y sin cobros ni suscripciones** durante esta fase. La beta gratuita **no garantiza gratuidad permanente** | Aprobada | Decisión expresa del propietario; resuelve AF-19 | PRD §1, §4.3, §5.1, §5.2, §7, §8.2, RN-141 a RN-143 · MAPA A02, A12, A17, F21, F26 | Nueva pantalla A17 (invitación); aviso de no gratuidad permanente en la invitación y en los términos de la beta; se mantienen todas las obligaciones legales y de privacidad para adultos; mecanismo de invitaciones pendiente (DEC-69); política de transición pendiente (DEC-67). Pagos y suscripciones siguen sin implementarse (DEC-01, DEC-22) |
 | **DEC-70** | Los documentos legales validados son **requisito previo para invitar a usuarios reales** a la beta | Aprobada | Instrucción expresa del propietario (v0.2.2); resuelve en parte AF-18 | PRD §5.1, §8.6, RN-144 · MAPA A12, F26 | No se invita a nadie real hasta tener los documentos de DEC-71 validados y publicados en A12. Las obligaciones para adultos se mantienen (DEC-68) |
+| **DEC-66** | **Compatibilidad con tablets durante la beta y el MVP:** compatibilidad básica, sin interfaces optimizadas específicamente para tablets. **Android:** adaptación a distintos tamaños de ventana y orientaciones, conservación del estado de formularios y actividades, y funcionamiento correcto en pantalla dividida. **Apple:** se prioriza iPhone; durante la beta la app se publica como aplicación para iPhone, con compatibilidad básica en iPad mediante el modo de compatibilidad para apps de iPhone. La optimización específica para tablets se evaluará antes del lanzamiento público, **sin compromiso de desarrollarla**. Requisitos técnicos TB-01 a TB-04 | Aprobada | Decisión expresa del propietario (v0.2.3) tras el análisis de ET4. Base verificada en documentación oficial: Android 16 (API 36) ignora las restricciones de orientación y tamaño en pantallas de al menos 600 dp; Google Play exige API 36 desde el 31 de agosto de 2026; Android 17 (API 37) elimina la excepción temporal | PRD §5.2, §10 (TB-01 a TB-04) · MAPA §10 | El sistema de diseño (ET3) define ancho máximo y puntos de corte; las pruebas incluyen tablets Android en vertical, horizontal y pantalla dividida. Compatible con DEC-03 (no es la optimización específica pospuesta) y no cierra DEC-59 |
 
 ### 1.1 Aprobadas para la v0.2 (mensaje del 16 de noviembre)
 
@@ -120,11 +121,15 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 | **DEC-63** | Cantidad inicial de recetas y programas básicos en el MVP | Pendiente | DEC-03 conserva los básicos | PRD §6.3, §6.4 · MAPA N05, E10 | Trabajo de contenido de ET6.2 y ET6.3 |
 | **DEC-64** | Mientras una decisión sobre menores esté pendiente, la función queda desactivada para ese tramo (propuesta de Claude) | Pendiente | Deriva de DEC-11, pero es un criterio nuevo | PRD PR-8, RN-125, §9.2 | Permite construir sin decidir la experiencia de menores |
 | **DEC-65** | La analítica permanece desactivada hasta que el usuario la consienta (propuesta de Claude) | Pendiente | Hallazgo E-09; deriva de DEC-11 | PRD RN-133 · MAPA A14 | Menos datos de uso al principio |
-| **DEC-66** | Comportamiento de la app en tablets durante el MVP (escalado, compatibilidad en iPad) | Requiere validación (técnica, Etapa 4) | DEC-03 pospone la optimización | PRD §5.2, §10 · MAPA §10 | Puede afectar a la publicación en la tienda de iPad |
 | **DEC-67** | **Política de transición de la beta gratuita a planes comerciales:** qué ocurre con las cuentas, los datos y lo creado por quienes participaron en la beta cuando se activen los planes (aviso previo, periodo de cortesía, condiciones) | Pendiente | Consecuencia de DEC-01 y DEC-68; redefinida en la v0.2.1 por instrucción del propietario | PRD RN-140, RN-141 · MAPA F21 | Debe resolverse antes de activar planes comerciales (ET10). Mínimo propuesto: no se borra nada (RN-92, propuesta). Puede requerir validación legal (protección al consumidor) |
 | **DEC-69** | Mecanismo de invitaciones a la beta: quién invita, cuántas invitaciones hay, si los códigos son de un solo uso, caducidad y qué ve quien no tiene invitación | Pendiente | Necesario para aplicar DEC-68. **Bloquea ET6.1** | PRD RN-143 · MAPA A17, F26 | Define los estados de error de A17 y la comunicación a quien no tiene invitación |
 | **DEC-71** | Redacción y validación legal de los documentos de la beta: Términos y condiciones, Términos de la beta (con RN-141), Aviso de privacidad para adultos (consentimientos separados de DEC-08, categorías de DEC-42, encargados como el proveedor de correo) y procedimiento ARCO; y cualquier otro que indique el abogado | Requiere validación (legal) | Necesario para cumplir DEC-70 | PRD §8.6, RN-90, RN-144 · MAPA A04, A12 | Sin ellos no se puede invitar a usuarios reales |
-| **DEC-72** | Selección del proveedor de correo transaccional. Los requisitos del servicio están documentados (PRD §8.5) por instrucción del propietario; la elección del proveedor sigue pendiente | Pendiente | Se elige en ET4 con los criterios de PRD §8.5 | PRD §4.2, §8.5 · MAPA §9 | Sin proveedor, la verificación de correo, la recuperación de cuenta y los avisos de ET6.1 no funcionan de extremo a extremo |
+| **DEC-72** | **Proveedor de correo transaccional.** API como método preferido y SMTP como alternativa (no se exigen ambos). Si el servicio de autenticación elegido (DEC-76) usa su propio sistema de envío de correos, su compatibilidad con los requisitos de privacidad, seguridad y entregabilidad se evalúa por separado, sin obligar a usar un único proveedor para todos los correos. **CT-14 se aplica a todos los correos transaccionales de Definite Fitnes, independientemente del servicio que los envíe.** Candidatos, sin seleccionar ninguno: Amazon SES, Postmark, Resend, SendGrid y Mailgun. Investigar proveedores no requiere un dominio definitivo; **configurar el dominio** (SPF, DKIM, DMARC) queda pendiente hasta decidir qué dominio usar (relacionado con DEC-53) | Pendiente | Redefinida en la v0.2.3 con aprobación del propietario. Se selecciona después de DEC-74 y DEC-76, con información verificada en fuentes oficiales (precios, ubicación de datos, conservación, contrato de tratamiento). **Bloquea ET6.1** | PRD §4.2, §8.5 (CT-09, CT-14) · MAPA §9 | Debe estar seleccionado antes de completar ET6.1. Si la autenticación envía sus propios correos, DEC-72 cubre el resto (avisos de cuenta, exportación, eliminación, ARCO) |
+| **DEC-73** | Tecnología de la aplicación móvil (iOS y Android) | Pendiente | Separación tecnológica aprobada por el propietario (v0.2.3). Orden de análisis: 1.º. **Bloquea ET4** | PRD §4, §12 | Registrarla como pendiente **no elige ninguna tecnología ni proveedor**; solo autoriza su análisis comparativo con criterios objetivos: rendimiento, mantenimiento, compatibilidad, ecosistema, costos y facilidad de desarrollo. Debe cumplir DEC-66 |
+| **DEC-74** | Backend: dónde y cómo se ejecuta la lógica del servidor | Pendiente | Separación tecnológica aprobada por el propietario (v0.2.3). Orden de análisis: 4.º. **Bloquea ET4** | PRD §4, §12 | Registrarla como pendiente **no elige ninguna tecnología ni proveedor**; solo autoriza su análisis comparativo con criterios objetivos: rendimiento, mantenimiento, compatibilidad, ecosistema, costos y facilidad de desarrollo. Condiciona DEC-72 |
+| **DEC-75** | Base de datos y almacenamiento de archivos | Pendiente | Separación tecnológica aprobada por el propietario (v0.2.3). Orden de análisis: 2.º. **Bloquea ET4** | PRD §4, §12 | Registrarla como pendiente **no elige ninguna tecnología ni proveedor**; solo autoriza su análisis comparativo con criterios objetivos: rendimiento, mantenimiento, compatibilidad, ecosistema, costos y facilidad de desarrollo. Debe considerar DEC-42 (datos de salud) |
+| **DEC-76** | Autenticación: cuentas con correo, Apple y Google, y sesiones | Pendiente | Separación tecnológica aprobada por el propietario (v0.2.3). Orden de análisis: 5.º. **Bloquea ET4** | PRD §4, §12 | Registrarla como pendiente **no elige ninguna tecnología ni proveedor**; solo autoriza su análisis comparativo con criterios objetivos: rendimiento, mantenimiento, compatibilidad, ecosistema, costos y facilidad de desarrollo. Debe cumplir DEC-09 y RN-128; condiciona DEC-72 |
+| **DEC-77** | Infraestructura y alojamiento: nube y región | Pendiente | Separación tecnológica aprobada por el propietario (v0.2.3). Orden de análisis: 3.º. **Bloquea ET4** | PRD §4, §12 | Registrarla como pendiente **no elige ninguna tecnología ni proveedor**; solo autoriza su análisis comparativo con criterios objetivos: rendimiento, mantenimiento, compatibilidad, ecosistema, costos y facilidad de desarrollo. Debe considerar DEC-06 y CT-12 (ubicación de los datos) |
 
 ---
 
@@ -170,10 +175,10 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 
 | Estado | Cantidad | IDs |
 |---|---|---|
-| Aprobada | 24 | DEC-01, DEC-02, DEC-03, DEC-04, DEC-05, DEC-06, DEC-07, DEC-08, DEC-09, DEC-10, DEC-11, DEC-12, DEC-13, DEC-14, DEC-15, DEC-16, DEC-17, DEC-19, DEC-20, DEC-21, DEC-22, DEC-44, DEC-68, DEC-70 |
-| Requiere validación | 18 | DEC-18, DEC-30, DEC-31, DEC-32, DEC-33, DEC-34, DEC-35, DEC-36, DEC-37, DEC-39, DEC-41, DEC-42, DEC-50, DEC-53, DEC-57, DEC-61, DEC-66, DEC-71 |
-| Pendiente | 23 | DEC-38, DEC-40, DEC-43, DEC-45, DEC-46, DEC-47, DEC-48, DEC-49, DEC-51, DEC-52, DEC-54, DEC-55, DEC-56, DEC-58, DEC-59, DEC-60, DEC-62, DEC-63, DEC-64, DEC-65, DEC-67, DEC-69, DEC-72 |
-| **Total** | **65** | |
+| Aprobada | 25 | DEC-01, DEC-02, DEC-03, DEC-04, DEC-05, DEC-06, DEC-07, DEC-08, DEC-09, DEC-10, DEC-11, DEC-12, DEC-13, DEC-14, DEC-15, DEC-16, DEC-17, DEC-19, DEC-20, DEC-21, DEC-22, DEC-44, DEC-66, DEC-68, DEC-70 |
+| Requiere validación | 17 | DEC-18, DEC-30, DEC-31, DEC-32, DEC-33, DEC-34, DEC-35, DEC-36, DEC-37, DEC-39, DEC-41, DEC-42, DEC-50, DEC-53, DEC-57, DEC-61, DEC-71 |
+| Pendiente | 28 | DEC-38, DEC-40, DEC-43, DEC-45, DEC-46, DEC-47, DEC-48, DEC-49, DEC-51, DEC-52, DEC-54, DEC-55, DEC-56, DEC-58, DEC-59, DEC-60, DEC-62, DEC-63, DEC-64, DEC-65, DEC-67, DEC-69, DEC-72, DEC-73, DEC-74, DEC-75, DEC-76, DEC-77 |
+| **Total** | **70** | |
 
 **Numeración (AF-05):** los identificadores DEC son secuenciales y **no indican estado**. Los números DEC-23 a DEC-29 no se usaron y quedan sin asignar; cada decisión nueva toma el siguiente número libre. Ningún identificador existente se renumera, para conservar la trazabilidad.
 
@@ -183,21 +188,25 @@ Incluye las decisiones abiertas de la v0.1 que siguen vigentes y las surgidas al
 
 Fuente única para el PRD §12. "Bloquea" indica el primer hito que no puede completarse sin la decisión.
 
-| Decisión | Tema | Estado | Bloquea | También afecta |
+| Decisión | Tema | Estado | Bloquea | Notas |
 |---|---|---|---|---|
-| DEC-66 | Comportamiento en tablets [VAL] | Requiere validación | ET4 (arquitectura técnica) | — |
-| DEC-72 | Proveedor de correo transaccional | Pendiente | ET4 (arquitectura técnica) | ET6.1 (verificación de correo, recuperación y avisos) |
+| DEC-73 | Tecnología de la aplicación móvil | Pendiente | ET4 (arquitectura técnica) | Análisis 1.º; debe cumplir DEC-66 |
+| DEC-75 | Base de datos y almacenamiento | Pendiente | ET4 (arquitectura técnica) | Análisis 2.º; considerar DEC-42 |
+| DEC-77 | Infraestructura y alojamiento | Pendiente | ET4 (arquitectura técnica) | Análisis 3.º; considerar DEC-06 y CT-12 |
+| DEC-74 | Backend | Pendiente | ET4 (arquitectura técnica) | Análisis 4.º; condiciona DEC-72 |
+| DEC-76 | Autenticación | Pendiente | ET4 (arquitectura técnica) | Análisis 5.º; condiciona DEC-72 |
 | DEC-42 | Qué datos son de salud y granularidad de consentimientos [VAL] | Requiere validación | ET6.1 (acceso, registro, onboarding, inicio y perfil) | — |
 | DEC-43 | Cómo se determina el país del usuario | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | — |
-| DEC-54 | Bienestar y hábitos en el onboarding | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | ET6.3 |
-| DEC-55 | Modalidad principal sin métricas propias | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | ET6.2 |
+| DEC-54 | Bienestar y hábitos en el onboarding | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | También afecta a ET6.3 |
+| DEC-55 | Modalidad principal sin métricas propias | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | También afecta a ET6.2 |
 | DEC-56 | Foto de perfil | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | — |
-| DEC-60 | Valores numéricos propuestos | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | ET6.2 (umbral de predicción); MEN (plazo del tutor) |
+| DEC-60 | Valores numéricos propuestos | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | También afecta a ET6.2 (umbral de predicción) y MEN (plazo del tutor) |
 | DEC-65 | Analítica desactivada hasta su consentimiento | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | — |
 | DEC-69 | Mecanismo de invitaciones a la beta | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | — |
+| DEC-72 | Proveedor de correo transaccional | Pendiente | ET6.1 (acceso, registro, onboarding, inicio y perfil) | Depende de DEC-74 y DEC-76; se selecciona en último lugar |
 | DEC-71 | Redacción y validación de los documentos legales de la beta [VAL] | Requiere validación | Invitar a usuarios reales a la beta | — |
 | DEC-47 | Disciplinas con métricas propias | Pendiente | ET6.2 (entrenamiento y progreso) | — |
-| DEC-57 | Fuentes y licencias de contenido [VAL] | Requiere validación | ET6.2 (entrenamiento y progreso) | ET6.3 |
+| DEC-57 | Fuentes y licencias de contenido [VAL] | Requiere validación | ET6.2 (entrenamiento y progreso) | También afecta a ET6.3 |
 | DEC-63 | Cantidad inicial de recetas y programas | Pendiente | ET6.2 (entrenamiento y progreso) | — |
 | DEC-50 | Límites de seguridad nutricional [VAL] | Requiere validación | ET6.3 (nutrición) | — |
 | DEC-61 | Criterios de señales de riesgo [VAL] | Requiere validación | ET6.3 (nutrición) | — |
@@ -220,7 +229,7 @@ Fuente única para el PRD §12. "Bloquea" indica el primer hito que no puede com
 | DEC-34 | Datos de salud de menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | — |
 | DEC-35 | Peso, medidas y objetivos corporales en menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | — |
 | DEC-36 | Nutrición para menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | — |
-| DEC-37 | Apple Health / Health Connect para menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | ET10 |
+| DEC-37 | Apple Health / Health Connect para menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | También afecta a ET10 |
 | DEC-38 | Menores en planes familiares | Pendiente | MEN (habilitación futura de menores) | — |
 | DEC-39 | Acceso del tutor a la información del menor [VAL] | Requiere validación | MEN (habilitación futura de menores) | — |
 | DEC-41 | IA para menores [VAL] | Requiere validación | MEN (habilitación futura de menores) | — |

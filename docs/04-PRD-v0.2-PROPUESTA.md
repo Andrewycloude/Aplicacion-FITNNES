@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2.2 — propuesta |
+| **Versión** | 0.2.3 — propuesta |
 | **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921). |
+| **Sustituye a** | Nada todavía. `docs/01-PRD.md` (v0.1) sigue vigente e intacto hasta que apruebes esta propuesta. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc). |
 | **Documentos relacionados** | [05 — Mapa de navegación v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad de la auditoría](07-TRAZABILIDAD-AUDITORIA-v0.2.md) · [03 — Auditoría cruzada](03-AUDITORIA-CRUZADA.md) |
 | **Nombre** | "Definite Fitnes" es **provisional**: su validación como marca está pendiente (DEC-10, DEC-53). |
 
@@ -80,6 +80,15 @@ Correcciones documentales de la auditoría final y dos incorporaciones pedidas p
 4. **AF-03, AF-16, AF-28:** DEC-65 citada en RN-133; referencia de RN-114 corregida a F16/F17; RN-118 a RN-120 con formato de regla.
 5. **Correo transaccional:** requisitos formales en §8.5; proveedor pendiente (DEC-72).
 6. **Documentos legales:** requisito previo para invitar a usuarios reales (DEC-70, RN-144); redacción y validación pendientes (DEC-71).
+
+### 0.7 Cambios en la v0.2.3
+
+Aprobados expresamente por el propietario. La línea base v0.2.2 (commit 562f7fc) no se modifica.
+
+1. **DEC-66 aprobada:** compatibilidad básica con tablets; requisitos TB-01 a TB-04 (§10).
+2. **DEC-72 redefinida (pendiente):** API preferida y SMTP como alternativa; evaluación separada del envío propio de la autenticación; candidatos sin seleccionar; selección después de DEC-74 y DEC-76; dominio pendiente.
+3. **CT-09 precisado** (propuesta) y **CT-14 aprobado:** sin rastreo de aperturas ni clics en ningún correo transaccional, lo envíe quien lo envíe.
+4. **DEC-73 a DEC-77 (pendientes):** aplicación móvil, backend, base de datos y almacenamiento, autenticación, e infraestructura y alojamiento. Registrarlas no elige ninguna tecnología.
 
 ---
 
@@ -168,7 +177,7 @@ Una plataforma que combina entrenamiento personalizado, nutrición, bienestar, I
 
 ## 4. Arquitectura funcional
 
-> Esta sección describe **responsabilidades**, no tecnologías. La elección tecnológica corresponde a la Etapa 4 y no está tomada.
+> Esta sección describe **responsabilidades**, no tecnologías. La elección tecnológica corresponde a ET4 y no está tomada. Se analiza en cinco decisiones pendientes, en este orden: DEC-73 (aplicación móvil), DEC-75 (base de datos y almacenamiento), DEC-77 (infraestructura y alojamiento), DEC-74 (backend) y DEC-76 (autenticación); después, DEC-72 (correo). Registrarlas no elige ninguna tecnología ni proveedor.
 
 ### 4.1 Capas [APR]
 
@@ -287,7 +296,7 @@ La visión completa se conserva. Esta tabla separa lo que entra en el MVP de lo 
 | 10. Asistente IA | — | Todo el módulo (ET8) |
 | 11. Integraciones | Notificaciones | Apple Health, Health Connect, wearables, Spotify (ET10) |
 | Suscripciones | **Sin restricciones comerciales** (DEC-01) | Planes y pagos (ET10) |
-| Tablets | La app se usa en tablets **sin optimización específica** (viabilidad técnica: DEC-66) | **Diseños de dos paneles y barra lateral (POST)** |
+| Tablets | **Compatibilidad básica** (DEC-66): Android adaptable a tamaños de ventana, orientaciones y pantalla dividida; publicación como app de iPhone con compatibilidad en iPad; requisitos TB-01 a TB-04 | **Diseños de dos paneles y barra lateral (POST)**; la optimización específica se evaluará antes del lanzamiento público, sin compromiso de desarrollarla |
 | Modo sin conexión | **Solo la sesión de entrenamiento en curso** (DEC-04) | Sincronización sin conexión completa (POST) |
 | Menores y tutores | **No incluidos** (DEC-44): beta y MVP solo 18+ | Consentimiento parental, experiencias 13–15 y 16–17, páginas web del tutor (MEN) |
 | Acceso | **Solo por invitación** durante la beta (DEC-68); mecanismo: DEC-69 | Condiciones de acceso posteriores a la beta: por definir |
@@ -706,13 +715,16 @@ Las cifras concretas son la decisión DEC-62.
 | CT-06 | Textos en español, gestionados fuera del código para poder traducirse | [APR] DEC-06 · [PROP] detalle |
 | CT-07 | Las credenciales del proveedor se guardan como secretos, nunca en el código ni en el repositorio | [APR] (gestión segura de secretos) |
 | CT-08 | Límites de envío por persona y por dirección para evitar abuso; valores por definir | [PROP] |
-| CT-09 | Se registra qué se envió y cuándo, sin guardar el contenido del mensaje; conservación: valor por definir | [PROP][VAL] |
+| CT-09 | Se registra qué se envió y cuándo, sin guardar el contenido del mensaje. Se preferirán proveedores que permitan **no conservar el contenido**; si no lo permiten, el **periodo máximo de conservación** se fijará antes de comparar proveedores (valor por definir dentro de DEC-72) | [PROP][VAL] |
 | CT-10 | Se gestionan rebotes y errores de entrega, con reintento y aviso en la app cuando no se pueda entregar | [PROP] |
 | CT-11 | Los correos transaccionales no incluyen publicidad; cualquier comunicación comercial sería otra decisión con su propio consentimiento | [PROP][VAL] |
 | CT-12 | El proveedor actúa como encargado del tratamiento: contrato, ubicación de los datos y posibles transferencias internacionales deben validarse legalmente y figurar en el Aviso de privacidad (DEC-71) | [VAL] |
 | CT-13 | Mensajes legibles y accesibles, con versión de texto plano | [PROP] |
+| CT-14 | Los correos transaccionales no incluirán píxeles de seguimiento de aperturas ni mecanismos de redirección para rastrear clics. **Se aplica a todos los correos transaccionales de Definite Fitnes, independientemente del servicio que los envíe**, incluido un servicio de autenticación con envío propio | [APR] (v0.2.3) |
 
-**Criterios para elegir el proveedor (DEC-72)** [PROP]: cumplimiento de CT-01 a CT-13, soporte de dominio propio y autenticación, entregabilidad en México, condiciones de tratamiento de datos, ubicación de los servidores, costo y facilidad de integración. La elección se hace en ET4.
+**Criterios para elegir el proveedor (DEC-72)** [PROP]: cumplimiento de CT-01 a CT-14; **API como método preferido y SMTP como alternativa** (no se exigen ambos); soporte de dominio propio y autenticación; entregabilidad en México; condiciones de tratamiento de datos; ubicación de los servidores; costo y facilidad de integración. Candidatos sin seleccionar: Amazon SES, Postmark, Resend, SendGrid y Mailgun. La selección se hace **después de definir el backend (DEC-74) y la autenticación (DEC-76)**. Si la autenticación usa su propio envío de correos, su cumplimiento de estos requisitos (en particular CT-14) se evalúa por separado.
+
+**Dominio:** investigar proveedores no requiere un dominio definitivo; configurar el dominio (SPF, DKIM y DMARC) queda pendiente hasta decidir qué dominio usar (relacionado con DEC-53).
 
 ### 8.6 Documentos legales previos a la beta
 
@@ -858,11 +870,20 @@ Toda función cuyo tratamiento para menores esté pendiente queda **desactivada 
 | Rendimiento | Pantalla útil en menos de 3 s en teléfono de gama media; animaciones fluidas con opción de reducirlas | [PROP] |
 | Conexión | Solo la sesión de entrenamiento en curso funciona sin conexión (RN-30); el resto muestra un estado "sin conexión" claro y no pierde lo escrito sin avisar | [APR] DEC-04 · [PROP] estado |
 | Accesibilidad | WCAG AA, texto escalable, lectores de pantalla, áreas táctiles de al menos 44 puntos, no depender solo del color | [APR] accesibilidad · [PROP] detalle |
-| Plataformas | iOS y Android, teléfonos; tablets sin optimización específica en el MVP | [APR] DEC-03 · viabilidad: DEC-66 |
+| Plataformas | iOS y Android, teléfonos; tablets con compatibilidad básica, sin optimización específica (TB-01 a TB-04) | [APR] DEC-03, DEC-66 |
 | Internacionalización | Textos fuera del código, unidades, formatos y reglas por país configurables | [APR] DEC-06 |
 | Seguridad | §8.1 | [APR] |
 | Calidad | Pruebas automáticas de la lógica crítica: políticas por edad, consentimientos, predicciones, eventos, derechos sobre los datos. Cada regla [APR] debe poder verificarse con una prueba. | [APR] |
 | Contenido | Fuente identificada para alimentos y ejercicios | [APR] · licencias [VAL] |
+
+**Requisitos de tablets (DEC-66)** [APR]
+
+| ID | Requisito |
+|---|---|
+| TB-01 | No perder información de formularios al girar la pantalla |
+| TB-02 | Conservar el estado de las sesiones de entrenamiento al cambiar el tamaño de ventana |
+| TB-03 | Adaptar los elementos al espacio disponible, sin estirarlos innecesariamente |
+| TB-04 | Probar tablets Android en orientación vertical, horizontal y pantalla dividida |
 
 ---
 
@@ -880,8 +901,11 @@ El detalle completo, con estado, justificación y consecuencias, está en el [re
 
 | Decisión | Tema |
 |---|---|
-| DEC-66 | Comportamiento en tablets [VAL] |
-| DEC-72 | Proveedor de correo transaccional |
+| DEC-73 | Tecnología de la aplicación móvil |
+| DEC-75 | Base de datos y almacenamiento |
+| DEC-77 | Infraestructura y alojamiento |
+| DEC-74 | Backend |
+| DEC-76 | Autenticación |
 
 ### 12.2 Bloquean: ET6.1 (acceso, registro, onboarding, inicio y perfil)
 
@@ -895,6 +919,7 @@ El detalle completo, con estado, justificación y consecuencias, está en el [re
 | DEC-60 | Valores numéricos propuestos |
 | DEC-65 | Analítica desactivada hasta su consentimiento |
 | DEC-69 | Mecanismo de invitaciones a la beta |
+| DEC-72 | Proveedor de correo transaccional |
 
 ### 12.3 Bloquean: Invitar a usuarios reales a la beta
 
@@ -972,7 +997,7 @@ El detalle completo, con estado, justificación y consecuencias, está en el [re
 | DEC-45 | Fases de la experiencia del tutor |
 | DEC-64 | Desactivado mientras esté pendiente (menores) |
 
-**Nota:** DEC-30, DEC-31, DEC-45 y DEC-64 no bloquean la beta (DEC-44).
+**Notas:** DEC-30, DEC-31, DEC-45 y DEC-64 no bloquean la beta (DEC-44). Registrar DEC-73 a DEC-77 como pendientes no elige ninguna tecnología.
 
 ---
 

@@ -2,14 +2,19 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2.2 — propuesta |
+| **Versión** | 0.2.3 — propuesta |
 | **Estado** | **Pendiente de aprobación del propietario. No es definitiva** y no autoriza el inicio del desarrollo. |
-| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921). |
+| **Sustituye a** | Nada todavía. `docs/02-MAPA-NAVEGACION.md` (v0.1) sigue intacto. Las versiones anteriores se conservan en Git (v0.2: a5d6863; v0.2.1: abb3921; v0.2.2, línea base aprobada: 562f7fc). |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) · [07 — Trazabilidad](07-TRAZABILIDAD-AUDITORIA-v0.2.md) |
 
 ---
 
 ## 0. Historial de cambios
+
+### v0.2.3
+
+1. §10 Tablets describe DEC-66 (aprobada): compatibilidad básica; Android adaptable con giro y pantalla dividida; publicación como app de iPhone con compatibilidad en iPad. La orientación horizontal en Android deja de figurar como pospuesta, porque DEC-66 la exige en el MVP.
+2. Sin cambios en el inventario, los flujos ni los conteos.
 
 ### v0.2.2
 
@@ -736,8 +741,8 @@ Los enlaces que llegan por correo (A08, U12, A17 si DEC-69 lo define así) usan 
 
 ## 10. Tablets
 
-- **MVP:** la app funciona en tablets con el diseño de teléfono, sin optimización específica. Cómo se comporta exactamente (escalado, compatibilidad en iPad) se decide en la Etapa 4 (DEC-66).
-- **POST (DEC-03):** barra lateral, diseños de dos paneles (E02 + E03, N04 + N03, P02 + P04, C01 + C02), inicio en varias columnas y orientación horizontal.
+- **Beta y MVP (DEC-66, aprobada):** compatibilidad básica, sin interfaces optimizadas para tablets. **Android:** una columna con ancho máximo y contenido centrado; adaptable a distintos tamaños de ventana, a orientación vertical y horizontal y a pantalla dividida, sin perder datos de formularios ni el estado de una sesión de entrenamiento (TB-01 a TB-04). **Apple:** publicación como app de iPhone; en iPad funciona en el modo de compatibilidad para apps de iPhone.
+- **POST (DEC-03):** barra lateral, diseños de dos paneles (E02 + E03, N04 + N03, P02 + P04, C01 + C02), inicio en varias columnas e interfaz específica para iPad. La optimización específica se evaluará antes del lanzamiento público, sin compromiso de desarrollarla.
 
 ---
 

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Versión** | 0.2.2 — propuesta (no definitiva) |
+| **Versión** | 0.2.3 — propuesta (no definitiva) |
 | **Auditoría de origen** | [03-AUDITORIA-CRUZADA.md](03-AUDITORIA-CRUZADA.md) (59 hallazgos: 14 altos, 32 medios, 13 bajos) |
 | **Documentos relacionados** | [04 — PRD v0.2](04-PRD-v0.2-PROPUESTA.md) · [05 — Mapa v0.2](05-MAPA-NAVEGACION-v0.2-PROPUESTA.md) · [06 — Registro de decisiones](06-REGISTRO-DECISIONES-v0.2.md) |
 
@@ -200,3 +200,16 @@ Hallazgos de la auditoría cruzada realizada tras la v0.2.2. Por autorización d
 | **AC-02** | Baja | El perfil "Madre, padre o tutor" no indicaba que es habilitación futura | Resuelto | PRD §3.2 lo marca como MEN, fuera de la beta |
 | **AC-03** | Baja | Las notas de cambios de la v0.2.1 muestran la notación ET | Aceptado sin cambios | Diferencia histórica aceptada por el propietario |
 
+---
+
+## 9. Cambios de la v0.2.3
+
+Cambios aprobados expresamente por el propietario. No resuelven ni reabren hallazgos de las auditorías anteriores; se registran aquí para mantener la trazabilidad.
+
+| Cambio | Decisión | Documentos | Verificación |
+|---|---|---|---|
+| Compatibilidad básica con tablets y requisitos TB-01 a TB-04 | DEC-66 → Aprobada | PRD §5.2, §10 · MAPA §10 | En la línea base (562f7fc) DEC-66 figuraba como "Requiere validación" y estaba contada entre las 18 de validación; los conteos pasan a 25 / 17 / 28 = 70 |
+| Proveedor de correo: API preferida, SMTP alternativa, evaluación separada de la autenticación, dominio pendiente | DEC-72 → Pendiente (redefinida) | PRD §8.5 · registro §3 | Sin proveedor seleccionado |
+| Conservación de mensajes precisada | CT-09 [PROP] | PRD §8.5 | Sin cifras: valor por definir |
+| Sin rastreo de aperturas ni clics en todos los correos transaccionales | CT-14 [APR] | PRD §8.5 | Se aplica también al envío propio de la autenticación |
+| Separación de las decisiones tecnológicas | DEC-73 a DEC-77 → Pendientes | PRD §4, §12 · registro §3, §6 | Ninguna tecnología seleccionada |
